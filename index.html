@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="styles.css" />
   <meta name="description" content="Aditya Senapati — AI/ML student & aspiring SOC / Security Analyst. Projects: Intrusion Detection, Splunk SIEM, Cybersecurity simulations." />
 </head>
-
 <body>
   <header class="hero">
     <div class="container">
@@ -26,7 +25,6 @@
   </header>
 
   <main class="container">
-
     <!-- ABOUT -->
     <section id="about">
       <h2>About</h2>
@@ -57,178 +55,165 @@
     </section>
 
     <!-- PROJECTS -->
-<section id="projects">
-  <h2>Projects</h2>
+    <section id="projects">
+      <h2>Projects</h2>
 
-  <!-- ================= AI & ML ================= -->
-  <h3 style="margin-top:10px; color:#9fb1c8;">AI & Machine Learning</h3>
+      <!-- ================= AI & ML ================= -->
+      <h3 style="margin-top:10px; color:#9fb1c8;">AI & Machine Learning</h3>
 
-  <article class="project">
-    <h3>🧠 ProjectForgeAI – AI-Powered Project Idea Generator</h3>
-    <p>
-      AI system that generates <strong>personalized and unique project ideas</strong> using multi-domain fusion of Artificial Intelligence, Cybersecurity, and Computer Vision based on user-defined weights and skill level.
-    </p>
+      <article class="project">
+        <h3>🧠 ProjectForgeAI – AI-Powered Project Idea Generator</h3>
+        <p>
+          AI system that generates <strong>personalized and unique project ideas</strong> using multi-domain fusion of Artificial Intelligence, Cybersecurity, and Computer Vision based on user-defined weights and skill level.
+        </p>
+        <ul>
+          <li>Multi-domain fusion (AI + Cybersecurity + CV)</li>
+          <li>Custom weight-based idea generation</li>
+          <li>Uses Groq LLM for intelligent synthesis</li>
+          <li>Interactive UI built with Streamlit</li>
+        </ul>
+        <p><strong>Tech:</strong> Python, Streamlit, Groq API</p>
+        <a href="https://projectforgeai.streamlit.app/" class="btn" target="_blank">Live Demo</a>
+        <a href="https://github.com/MyselfAddy/ProjectForgeAI" class="btn" target="_blank">View Code</a>
+      </article>
 
-    <ul>
-      <li>Multi-domain fusion (AI + Cybersecurity + CV)</li>
-      <li>Custom weight-based idea generation</li>
-      <li>Uses Groq LLM for intelligent synthesis</li>
-      <li>Interactive UI built with Streamlit</li>
-    </ul>
+      <article class="project">
+        <h3>📊 Customer Churn Prediction System</h3>
+        <p>
+          Machine learning system to predict telecom customer churn, enabling businesses to take proactive retention actions using data-driven insights.
+        </p>
+        <ul>
+          <li>Implemented Logistic Regression, Random Forest, XGBoost</li>
+          <li>Achieved strong ROC-AUC (~0.82)</li>
+          <li>Identified key churn factors like contract type and billing patterns</li>
+          <li>Complete ML pipeline from preprocessing to evaluation</li>
+        </ul>
+        <p><strong>Tech:</strong> Python, Scikit-learn, Pandas</p>
+        <a href="https://github.com/MyselfAddy/Machine-Learning" class="btn" target="_blank">View Code</a>
+      </article>
 
-    <p><strong>Tech:</strong> Python, Streamlit, Groq API</p>
+      <!-- ================= CYBERSECURITY ================= -->
+      <h3 style="margin-top:20px; color:#9fb1c8;">Cybersecurity</h3>
 
-    <a href="https://projectforgeai.streamlit.app/" class="btn" target="_blank">Live Demo</a>
-    <a href="https://github.com/MyselfAddy/ProjectForgeAI" class="btn" target="_blank">View Code</a>
-  </article>
+      <article class="project">
+        <h3>🛡️ CybersDen – SOC Analyst Toolkit <span style="color:#0ea5a4;">(Internship Project)</span></h3>
+        <p>
+          A unified SOC platform that integrates multiple security tools into one dashboard for efficient threat investigation, reducing analyst effort and improving triage speed.
+        </p>
+        <ul>
+          <li>IOC enrichment using VirusTotal, AbuseIPDB, IPInfo</li>
+          <li>Log and network traffic analysis</li>
+          <li>AI-based phishing detection</li>
+          <li>Automated incident report generation</li>
+          <li>Risk scoring for quick decision-making</li>
+        </ul>
+        <p><strong>Tech:</strong> Python, Streamlit, APIs, SIEM Concepts</p>
+        <a href="https://cybersden.streamlit.app/" class="btn" target="_blank">Live Demo</a>
+        <a href="https://github.com/MyselfAddy/CybersDen" class="btn" target="_blank">View Code</a>
+      </article>
 
-  <article class="project">
-    <h3>📊 Customer Churn Prediction System</h3>
-    <p>
-      Machine learning system to predict telecom customer churn, enabling businesses to take proactive retention actions using data-driven insights.
-    </p>
+      <article class="project">
+        <h3>🔐 Splunk-Based Login Activity & Security Analysis</h3>
+        <p>
+          Conducted authentication log analysis using Splunk to detect anomalies, identify attack patterns, and generate actionable security insights through SPL queries and dashboards.
+        </p>
+        <ul>
+          <li>Analyzed ~500 authentication events over 7 days</li>
+          <li>Built SPL queries for login success/failure, IP tracking, and time trends</li>
+          <li>Designed interactive dashboards for security monitoring</li>
+          <li>Detected targeted attacks on privileged accounts</li>
+          <li>Identified internal threat patterns and abnormal login behavior</li>
+        </ul>
+        <p><strong>Tech:</strong> Splunk Enterprise, SPL, Log Analysis</p>
+        <a href="https://github.com/MyselfAddy/splunk-login-analysis" class="btn" target="_blank">View Code</a>
+      </article>
 
-    <ul>
-      <li>Implemented Logistic Regression, Random Forest, XGBoost</li>
-      <li>Achieved strong ROC-AUC (~0.82)</li>
-      <li>Identified key churn factors like contract type and billing patterns</li>
-      <li>Complete ML pipeline from preprocessing to evaluation</li>
-    </ul>
-
-    <p><strong>Tech:</strong> Python, Scikit-learn, Pandas</p>
-
-    <a href="https://github.com/MyselfAddy/Machine-Learning" class="btn" target="_blank">View Code</a>
-  </article>
-
-  <!-- ================= CYBERSECURITY ================= -->
-  <h3 style="margin-top:20px; color:#9fb1c8;">Cybersecurity</h3>
-
-  <article class="project">
-    <h3>🛡️ CybersDen – SOC Analyst Toolkit <span style="color:#0ea5a4;">(Internship Project)</span></h3>
-    <p>
-      A unified SOC platform that integrates multiple security tools into one dashboard for efficient threat investigation, reducing analyst effort and improving triage speed.
-    </p>
-
-    <ul>
-      <li>IOC enrichment using VirusTotal, AbuseIPDB, IPInfo</li>
-      <li>Log and network traffic analysis</li>
-      <li>AI-based phishing detection</li>
-      <li>Automated incident report generation</li>
-      <li>Risk scoring for quick decision-making</li>
-    </ul>
-
-    <p><strong>Tech:</strong> Python, Streamlit, APIs, SIEM Concepts</p>
-
-    <a href="https://cybersden.streamlit.app/" class="btn" target="_blank">Live Demo</a>
-    <a href="https://github.com/MyselfAddy/CybersDen" class="btn" target="_blank">View Code</a>
-  </article>
-
-  <article class="project">
-    <h3>🔐 Intelligent Network Intrusion Detection System 
-      <span style="color:#f59e0b;">(Major Project – Under Publishing)</span>
-    </h3>
-
-    <p>
-      Machine learning-based intrusion detection system trained on large-scale network traffic data to classify multiple attack types with high accuracy.
-    </p>
-
-    <ul>
-      <li>Dataset: CICIDS2017 (~2.5M records)</li>
-      <li>Balanced dataset using SMOTE (~1M records)</li>
-      <li>Models: Random Forest, AdaBoost, Extra Trees</li>
-      <li>Achieved near 100% accuracy in tree-based models</li>
-      <li>Full ML pipeline implementation</li>
-    </ul>
-
-    <p><strong>Tech:</strong> Python, Scikit-learn, Pandas</p>
-
-    <div style="margin-top:10px; padding:10px; background:rgba(255,255,0,0.05); border-radius:6px;">
-      ⚠️ This project is currently under publishing phase. Detailed documentation and repository will be available soon.
-    </div>
-  </article>
-
-</section>
+      <article class="project">
+        <h3>🔐 Intelligent Network Intrusion Detection System
+          <span style="color:#f59e0b;">(Major Project – Under Publishing)</span>
+        </h3>
+        <p>
+          Machine learning-based intrusion detection system trained on large-scale network traffic data to classify multiple attack types with high accuracy.
+        </p>
+        <ul>
+          <li>Dataset: CICIDS2017 (~2.5M records)</li>
+          <li>Balanced dataset using SMOTE (~1M records)</li>
+          <li>Models: Random Forest, AdaBoost, Extra Trees</li>
+          <li>Achieved near 100% accuracy in tree-based models</li>
+          <li>Full ML pipeline implementation</li>
+        </ul>
+        <p><strong>Tech:</strong> Python, Scikit-learn, Pandas</p>
+        <div style="margin-top:10px; padding:10px; background:rgba(255,255,0,0.05); border-radius:6px;">
+          ⚠️ This project is currently under publishing phase. Detailed documentation and repository will be available soon.
+        </div>
+      </article>
+    </section>
 
     <!-- EDUCATION -->
     <section id="education">
       <h2>Education</h2>
       <ul>
-
         <li>
-          <strong>B.E. in Artificial Intelligence & Machine Learning</strong> — 
-          AMC Engineering College, 
-          18th KM Bannerghatta Road, 
-          Bengaluru, Karnataka — Affiliated to Visvesvaraya Technological University (VTU).  
+          <strong>B.E. in Artificial Intelligence & Machine Learning</strong> —
+          AMC Engineering College,
+          18th KM Bannerghatta Road,
+          Bengaluru, Karnataka — Affiliated to Visvesvaraya Technological University (VTU).
           <strong>CGPA:</strong> 7.25 (2022–2026)
         </li>
-
         <li>
-          <strong>12th (PCMB)</strong> — 
-          New Baldwin International Pre University College,  
-          Bengaluru, Karnataka —  
+          <strong>12th (PCMB)</strong> —
+          New Baldwin International Pre University College,
+          Bengaluru, Karnataka —
           <strong>Percentage:</strong> 89.36% (2019–2021)
         </li>
-
         <li>
-          <strong>10th</strong> — 
-          M.Tres High School,   
-          Bengaluru, Karnataka —  
+          <strong>10th</strong> —
+          M.Tres High School,
+          Bengaluru, Karnataka —
           <strong>Percentage:</strong> 88% (2007–2019)
         </li>
-
       </ul>
     </section>
 
     <!-- CERTIFICATIONS -->
     <section id="certifications">
       <h2>Certifications</h2>
-
       <div class="cert-grid">
-
         <div class="cert-card">
           <h3>Google Cybersecurity Professional Certification (Ongoing)</h3>
         </div>
-
         <div class="cert-card">
           <h3>Oracle Cloud Infrastructure – AI Foundations (2025)</h3>
           <a href="certificates/eCertificate (2).pdf" target="_blank" class="cert-btn">View Certificate</a>
         </div>
-
         <div class="cert-card">
           <h3>TATA Cybersecurity Analyst – Forage</h3>
           <a href="certificates/Forage TATA cybersecurity Certificate.pdf" target="_blank" class="cert-btn">View Certificate</a>
         </div>
-
         <div class="cert-card">
           <h3>SOC Analyst Learning Path – LetsDefend</h3>
           <a href="certificates/SOC Analyst Learning Path — LetsDefend.png" target="_blank" class="cert-btn">View Certificate</a>
         </div>
-
         <div class="cert-card">
           <h3>Machine Learning – Internshala</h3>
           <a href="certificates/Machine Learning — Internshala Training.png" target="_blank" class="cert-btn">View Certificate</a>
         </div>
-
         <div class="cert-card">
           <h3>Machine Learning – Scholverse Educare</h3>
           <a href="certificates/Machine Learning — Scholverse Educare.png" target="_blank" class="cert-btn">View Certificate</a>
         </div>
-
         <div class="cert-card">
           <h3>Splunk Ignite – Devtown (Google Developer Group)</h3>
           <a href="certificates/Splunk Ignite — Devtown , google.png" target="_blank" class="cert-btn">View Certificate</a>
         </div>
-
         <div class="cert-card">
           <h3>Splunk Ignite – Devtown (Microsoft Student Chapter)</h3>
           <a href="certificates/Splunk Ignite — Devtown, microsoft.png" target="_blank" class="cert-btn">View Certificate</a>
         </div>
-
         <div class="cert-card">
           <h3>Splunk Ignite – Devtown (Bootcamp Completion)</h3>
           <a href="certificates/Splunk Ignite — Devtown.png" target="_blank" class="cert-btn">View Certificate</a>
         </div>
-
       </div>
     </section>
 
@@ -244,7 +229,6 @@
       <p>I’m seeking Security Analyst / SOC Intern roles. Reach out — I respond quickly.</p>
       <a class="btn" href="mailto:adityasenapati25@gmail.com">Email Me</a>
     </section>
-
   </main>
 
   <!-- FOOTER -->
@@ -254,14 +238,11 @@
     </div>
   </footer>
 
-<script>
-  document.getElementById('year').innerText = new Date().getFullYear();
-
-  // Updated with your real profiles
-  document.getElementById('linkedin').href = "https://www.linkedin.com/in/aditya-senapati-r-62bb87309/";
-  document.getElementById('github').href = "https://github.com/MyselfAddy";
-</script>
-
-
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+    // Updated with your real profiles
+    document.getElementById('linkedin').href = "https://www.linkedin.com/in/aditya-senapati-r-62bb87309/";
+    document.getElementById('github').href = "https://github.com/MyselfAddy";
+  </script>
 </body>
 </html>
