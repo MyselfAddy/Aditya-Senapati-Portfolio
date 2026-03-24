@@ -57,25 +57,97 @@
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects">
-      <h2>Selected Projects</h2>
+<section id="projects">
+  <h2>Projects</h2>
 
-      <article class="project">
-        <h3>Intrusion Detection & Network Flow Analytics (Major Project)</h3>
-        <p>AI-driven multi-class Intrusion Detection System using CICIDS 2017 (2.5M+ records). Employed Random Forest & ensemble methods with selective SMOTE and feature engineering to manage imbalance — achieved very high F1-scores for attack classes.</p>
-        <p><strong>Tech:</strong> Random Forest, Ensemble, SMOTE, Pandas, Scikit-learn</p>
-      </article>
+  <!-- ================= AI & ML ================= -->
+  <h3 style="margin-top:10px; color:#9fb1c8;">AI & Machine Learning</h3>
 
-      <article class="project">
-        <h3>Splunk SIEM Analysis & Security Reporting</h3>
-        <p>Performed SIEM analysis in Splunk Enterprise using SPL to detect Brute Force and Privilege Escalation scenarios. Built dashboards & automated alerts to improve incident response.</p>
-      </article>
+  <article class="project">
+    <h3>🧠 ProjectForgeAI – AI-Powered Project Idea Generator</h3>
+    <p>
+      AI system that generates <strong>personalized and unique project ideas</strong> using multi-domain fusion of Artificial Intelligence, Cybersecurity, and Computer Vision based on user-defined weights and skill level.
+    </p>
 
-      <article class="project">
-        <h3>Tata Cybersecurity Analyst Job Simulation (Forage)</h3>
-        <p>Hands-on exposure to IAM, security policy, and incident documentation. Improved threat analysis and professional communication through simulation exercises.</p>
-      </article>
-    </section>
+    <ul>
+      <li>Multi-domain fusion (AI + Cybersecurity + CV)</li>
+      <li>Custom weight-based idea generation</li>
+      <li>Uses Groq LLM for intelligent synthesis</li>
+      <li>Interactive UI built with Streamlit</li>
+    </ul>
+
+    <p><strong>Tech:</strong> Python, Streamlit, Groq API</p>
+
+    <a href="https://projectforgeai.streamlit.app/" class="btn" target="_blank">Live Demo</a>
+    <a href="https://github.com/MyselfAddy/ProjectForgeAI" class="btn" target="_blank">View Code</a>
+  </article>
+
+  <article class="project">
+    <h3>📊 Customer Churn Prediction System</h3>
+    <p>
+      Machine learning system to predict telecom customer churn, enabling businesses to take proactive retention actions using data-driven insights.
+    </p>
+
+    <ul>
+      <li>Implemented Logistic Regression, Random Forest, XGBoost</li>
+      <li>Achieved strong ROC-AUC (~0.82)</li>
+      <li>Identified key churn factors like contract type and billing patterns</li>
+      <li>Complete ML pipeline from preprocessing to evaluation</li>
+    </ul>
+
+    <p><strong>Tech:</strong> Python, Scikit-learn, Pandas</p>
+
+    <a href="https://github.com/MyselfAddy/Machine-Learning" class="btn" target="_blank">View Code</a>
+  </article>
+
+  <!-- ================= CYBERSECURITY ================= -->
+  <h3 style="margin-top:20px; color:#9fb1c8;">Cybersecurity</h3>
+
+  <article class="project">
+    <h3>🛡️ CybersDen – SOC Analyst Toolkit <span style="color:#0ea5a4;">(Internship Project)</span></h3>
+    <p>
+      A unified SOC platform that integrates multiple security tools into one dashboard for efficient threat investigation, reducing analyst effort and improving triage speed.
+    </p>
+
+    <ul>
+      <li>IOC enrichment using VirusTotal, AbuseIPDB, IPInfo</li>
+      <li>Log and network traffic analysis</li>
+      <li>AI-based phishing detection</li>
+      <li>Automated incident report generation</li>
+      <li>Risk scoring for quick decision-making</li>
+    </ul>
+
+    <p><strong>Tech:</strong> Python, Streamlit, APIs, SIEM Concepts</p>
+
+    <a href="https://cybersden.streamlit.app/" class="btn" target="_blank">Live Demo</a>
+    <a href="https://github.com/MyselfAddy/CybersDen" class="btn" target="_blank">View Code</a>
+  </article>
+
+  <article class="project">
+    <h3>🔐 Intelligent Network Intrusion Detection System 
+      <span style="color:#f59e0b;">(Major Project – Under Publishing)</span>
+    </h3>
+
+    <p>
+      Machine learning-based intrusion detection system trained on large-scale network traffic data to classify multiple attack types with high accuracy.
+    </p>
+
+    <ul>
+      <li>Dataset: CICIDS2017 (~2.5M records)</li>
+      <li>Balanced dataset using SMOTE (~1M records)</li>
+      <li>Models: Random Forest, AdaBoost, Extra Trees</li>
+      <li>Achieved near 100% accuracy in tree-based models</li>
+      <li>Full ML pipeline implementation</li>
+    </ul>
+
+    <p><strong>Tech:</strong> Python, Scikit-learn, Pandas</p>
+
+    <div style="margin-top:10px; padding:10px; background:rgba(255,255,0,0.05); border-radius:6px;">
+      ⚠️ This project is currently under publishing phase. Detailed documentation and repository will be available soon.
+    </div>
+  </article>
+
+</section>
 
     <!-- EDUCATION -->
     <section id="education">
