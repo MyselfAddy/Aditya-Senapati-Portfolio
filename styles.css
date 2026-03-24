@@ -1,12 +1,12 @@
 :root{
-  --bg:#020617;
-  --card:#020617;
-  --text:#e6f1ff;
-  --muted:#7dd3fc;
-  --accent:#00ff9f;
-  --accent2:#00eaff;
+  --bg:#0b1220;
+  --card:#0f172a;
+  --text:#e6eef8;
+  --muted:#94a3b8;
+  --accent:#22c55e;   /* soft green */
+  --accent-soft:#4ade80;
 
-  font-family: "JetBrains Mono", monospace, system-ui;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto;
 }
 
 *{
@@ -16,26 +16,9 @@
 }
 
 body{
-  background: radial-gradient(circle at top, #020617, #000000);
+  background:linear-gradient(180deg,#020617 0%, #0b1220 100%);
   color:var(--text);
   line-height:1.6;
-}
-
-/* MATRIX BACKGROUND EFFECT */
-body::before{
-  content:"";
-  position:fixed;
-  width:100%;
-  height:100%;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(0,255,159,0.05) 0px,
-    rgba(0,255,159,0.05) 1px,
-    transparent 1px,
-    transparent 3px
-  );
-  pointer-events:none;
-  z-index:0;
 }
 
 /* CONTAINER */
@@ -43,8 +26,6 @@ body::before{
   max-width:1000px;
   margin:0 auto;
   padding:30px;
-  position:relative;
-  z-index:1;
 }
 
 /* HERO */
@@ -55,8 +36,7 @@ body::before{
 
 .hero h1{
   font-size:2.6rem;
-  color:var(--accent);
-  text-shadow:0 0 10px var(--accent);
+  font-weight:700;
 }
 
 .subtitle{
@@ -73,7 +53,6 @@ body::before{
 
 .contacts a:hover{
   color:var(--accent);
-  text-shadow:0 0 5px var(--accent);
 }
 
 /* BUTTONS */
@@ -82,7 +61,7 @@ body::before{
   margin:10px 8px 0 0;
   padding:10px 18px;
   border-radius:8px;
-  background:transparent;
+  background:rgba(34,197,94,0.1);
   border:1px solid var(--accent);
   color:var(--accent);
   text-decoration:none;
@@ -92,22 +71,21 @@ body::before{
 
 .btn:hover{
   background:var(--accent);
-  color:#000;
-  box-shadow:0 0 12px var(--accent);
+  color:#022c22;
 }
 
 /* SECTIONS */
 section{
-  background:rgba(0,255,159,0.03);
+  background:var(--card);
   padding:20px;
-  border-radius:10px;
+  border-radius:12px;
   margin:20px 0;
-  border:1px solid rgba(0,255,159,0.2);
+  border:1px solid rgba(255,255,255,0.05);
   transition:0.3s;
 }
 
 section:hover{
-  box-shadow:0 0 15px rgba(0,255,159,0.2);
+  border-color:rgba(34,197,94,0.3);
 }
 
 /* HEADINGS */
@@ -117,7 +95,7 @@ h2{
 }
 
 h3{
-  color:var(--accent2);
+  color:#cbd5f5;
 }
 
 /* SKILLS */
@@ -128,21 +106,15 @@ h3{
 }
 
 .skill-grid div{
-  background:rgba(0,255,159,0.05);
+  background:rgba(255,255,255,0.03);
   padding:12px;
   border-radius:8px;
-  border:1px solid rgba(0,255,159,0.15);
 }
 
 /* PROJECTS */
 .project{
   padding:12px 0;
-  border-top:1px dashed rgba(0,255,159,0.2);
-  transition:0.3s;
-}
-
-.project:hover{
-  transform:translateX(6px);
+  border-top:1px dashed rgba(255,255,255,0.08);
 }
 
 .project ul{
@@ -157,16 +129,15 @@ h3{
 }
 
 .cert-card{
-  background:rgba(0,255,159,0.04);
+  background:rgba(255,255,255,0.04);
   padding:16px;
   border-radius:10px;
-  border:1px solid rgba(0,255,159,0.2);
+  border:1px solid rgba(255,255,255,0.08);
   transition:0.3s;
 }
 
 .cert-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 0 15px rgba(0,255,159,0.3);
+  transform:translateY(-4px);
 }
 
 .cert-btn{
@@ -174,14 +145,10 @@ h3{
   margin-top:8px;
   padding:8px 12px;
   border-radius:6px;
-  border:1px solid var(--accent);
-  color:var(--accent);
-  text-decoration:none;
-}
-
-.cert-btn:hover{
   background:var(--accent);
-  color:#000;
+  color:#022c22;
+  text-decoration:none;
+  font-weight:600;
 }
 
 /* FOOTER */
