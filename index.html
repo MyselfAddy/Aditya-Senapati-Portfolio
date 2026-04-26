@@ -1,324 +1,814 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Aditya Senapati R — AI/ML & Cybersecurity</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aditya Senapati R — SOC Analyst · AI/ML & Cybersecurity</title>
+  <meta name="description" content="Aditya Senapati R — Aspiring SOC Analyst with hands-on experience in SIEM monitoring, threat detection, incident response, UEBA, and AI-driven security automation. Projects: VEILGuard, CybersDen, Intrusion Detection System, Splunk SIEM analysis." />
+  <meta name="keywords" content="SOC Analyst, Cybersecurity, SIEM, Splunk, Threat Detection, Incident Response, MITRE ATT&CK, Python, AI Security, Bangalore" />
+  <meta property="og:title" content="Aditya Senapati R — SOC Analyst · Cybersecurity" />
+  <meta property="og:description" content="Aspiring SOC Analyst building AI-powered security tools. Available for SOC L1, Security Analyst, and Cybersecurity Intern roles." />
+  <meta property="og:type" content="website" />
   <link rel="stylesheet" href="styles.css" />
-  <meta name="description" content="Aditya Senapati — AI/ML student & aspiring SOC / Security Analyst. Projects: Intrusion Detection, Splunk SIEM, Cybersecurity simulations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <h1>Aditya Senapati R</h1>
-      <p class="subtitle">Bachelor of Engineering in Artificial Intelligence & Machine Learning (2022–2026) · Aspiring SOC / Security Analyst</p>
-      <div class="contacts">
-        <a href="mailto:adityasenapati25@gmail.com">adityasenapati25@gmail.com</a>
-        <span>•</span>
-        <a href="tel:+919620881655">+91 96208 81655</a>
-        <span>•</span>
-        <a href="#" id="linkedin">LinkedIn</a>
-        <span>•</span>
-        <a href="#" id="github">GitHub</a>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">AS<span class="nav-logo-dot">.</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certs</a></li>
+        <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-scanline"></div>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge reveal-up">
+          <span class="badge-dot"></span>
+          Open to SOC Analyst · L1 Roles
+        </div>
+        <h1 class="hero-name reveal-up delay-1">
+          Aditya<br/>Senapati R
+        </h1>
+        <p class="hero-title reveal-up delay-2">
+          AI/ML Engineer &amp; Aspiring SOC Analyst
+        </p>
+        <p class="hero-sub reveal-up delay-3">
+          Building AI-driven security tools that detect threats, automate triage, and strengthen enterprise defenses. B.E. AI &amp; ML · AMC Engineering College, Bangalore.
+        </p>
+        <div class="hero-contacts reveal-up delay-4">
+          <a href="mailto:adityasenapati25@gmail.com" class="contact-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            adityasenapati25@gmail.com
+          </a>
+          <a href="tel:+919620881655" class="contact-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            +91 96208 81655
+          </a>
+          <a href="https://www.linkedin.com/in/aditya-senapati-r-62bb87309/" target="_blank" rel="noopener" class="contact-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zm2-3a2 2 0 110-4 2 2 0 010 4z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/MyselfAddy" target="_blank" rel="noopener" class="contact-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            GitHub
+          </a>
+        </div>
+        <div class="hero-actions reveal-up delay-5">
+          <a href="Aditya_Senapati_Resume_L1.pdf" target="_blank" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            View Resume
+          </a>
+          <a href="Aditya_Senapati_Resume_L1.pdf" download class="btn btn-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Resume
+          </a>
+          <a href="#contact" class="btn btn-ghost">Let's Connect</a>
+        </div>
       </div>
-      <div style="margin-top:15px;">
-        <a href="Aditya_Senapati_Resume_L1.pdf" target="_blank" class="btn">
-          📄 View Resume
-        </a>
-        <a href="Aditya_Senapati_Resume_L1.pdf" download class="btn">
-          ⬇ Download Resume
-        </a>
+      <div class="hero-image-wrap reveal-right delay-2">
+        <div class="hero-img-ring"></div>
+        <div class="hero-img-ring hero-img-ring-2"></div>
+        <div class="hero-img-container">
+          <img src="my_pic.png" alt="Aditya Senapati R" class="hero-img" loading="eager" />
+          <div class="hero-img-overlay"></div>
+        </div>
+        <div class="hero-img-badge hero-img-badge-1">
+          <span class="badge-icon">🛡️</span>
+          <span>SOC Ready</span>
+        </div>
+        <div class="hero-img-badge hero-img-badge-2">
+          <span class="badge-icon">⚡</span>
+          <span>AI-Powered</span>
+        </div>
       </div>
     </div>
-  </header>
+    <div class="hero-stats reveal-up delay-5">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-num">4+</span>
+            <span class="stat-label">Live Security Projects</span>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="stat-item">
+            <span class="stat-num">10+</span>
+            <span class="stat-label">Certifications</span>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="stat-item">
+            <span class="stat-num">2.5M+</span>
+            <span class="stat-label">Records Analyzed (IDS)</span>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="stat-item">
+            <span class="stat-num">99.86%</span>
+            <span class="stat-label">Model F1-Score</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <main class="container">
+  <main>
+
     <!-- ABOUT -->
-    <section id="about">
-      <h2>About</h2>
-      <p>My name is Aditya Senapati R, and I am currently pursuing my B.E. in Artificial Intelligence and Machine Learning from AMC Engineering College. I have a strong interest in combining AI with cybersecurity and have been building practical projects in this space, including an intrusion detection system using real-world network data and a SOC Analyst Toolkit that simulates real security workflows. During my internship as an AI in Cybersecurity Intern at Rooman Technologies, I worked on log analysis, threat detection, and integrating threat intelligence into usable tools. I have hands-on experience with SIEM concepts, Splunk, and network security fundamentals, and I focus on building simple, effective systems that help in analyzing and understanding security threats. I am particularly interested in SOC Analyst roles where I can contribute to monitoring and investigation while continuously improving my skills in real-world security operations.</p>
-    </section>
-
-    <section id="resume">
-      <h2>Resume</h2>
-      <p>You can view or download my latest resume below.</p>
-    
-      <a href="Aditya_Senapati_Resume_L1.pdf" target="_blank" class="btn">
-        📄 View Resume
-      </a>
-      <a href="Aditya_Senapati_Resume_L1.pdf" download class="btn">
-        ⬇ Download Resume
-      </a>
-    </section>
-    <!-- SKILLS -->
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="skill-grid">
-        <div>
-          <h3>Networking</h3>
-          <p>TCP/IP, Ports, Protocols</p>
-        </div>
-        <div>
-          <h3>Programming & Scripting</h3>
-          <p>Python, Bash, SQL</p>
-        </div>
-        <div>
-          <h3>Security & SOC</h3>
-          <p> Splunk SIEM (Dashboards, Alerts, Log Analysis), SIEM Monitoring, Wireshark, Network Traffic Monitoring, Incident Response, Log Correlation, Threat Detection, Alert Triage, Playbooks, SOC Operations, MITRE ATT&CK, Threat Intelligence, UEBA (User and Entity Behavior Analytics), Insider Threat Detection</p>
-        </div>
-        <div>
-          <h3>AI/ML for Security</h3>
-          <p> Intrusion Detection, Anomaly Detection, Classification (Scikit-learn), Isolation Forest, Behavioral Analytics, Risk Scoring, Rule-Based Detection</p>
-        </div>
-        <div>
-          <h3>Platforms & Tools</h3>
-          <p>Git/GitHub, Linux, Active Directory, Azure Entra ID, Google Colab, VS Code, Streamlit, VirusTotal API, AbuseIPDB API, IPInfo API, Groq LLM </p>
-        </div>
-        <div>
-          <h3>Productivity Tools</h3>
-          <p>Microsoft Office (Excel, PowerPoint, Word)</p>
-        </div>
-        <div>
-          <h3>Professional Competencies</h3>
-          <p>Leadership, Team Collaboration, Time Management, Project Coordination, Effective Communication, Critical Thinking</p>
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-label reveal-up">About Me</div>
+        <div class="about-grid">
+          <div class="about-text reveal-up delay-1">
+            <h2 class="section-title">Turning raw log data<br/>into actionable intelligence.</h2>
+            <p>I'm Aditya Senapati R — an AI/ML engineering student with a deliberate focus on cybersecurity and security operations. I don't just study threats; I build tools to detect them.</p>
+            <p>Currently interning as an <strong>AI Cybersecurity Intern at Rooman Technologies</strong>, I've shipped production-ready platforms like VEILGuard (insider threat detection) and CybersDen (SOC analyst toolkit) — both live on Streamlit Cloud. My work sits at the exact intersection of Machine Learning and Security Operations that modern SOC teams need.</p>
+            <p>I'm seeking <strong>SOC Analyst L1</strong>, <strong>Security Analyst</strong>, and <strong>Cybersecurity Intern</strong> roles where I can contribute to real-world threat detection and response.</p>
+            <div class="about-highlights">
+              <div class="highlight-chip">📍 Bangalore, Karnataka</div>
+              <div class="highlight-chip">🎓 B.E. AI & ML · 2026</div>
+              <div class="highlight-chip">🔒 SOC Analyst Focused</div>
+              <div class="highlight-chip">🤝 Open to Opportunities</div>
+            </div>
+          </div>
+          <div class="about-sidebar reveal-right delay-2">
+            <div class="expertise-card">
+              <h3>Core Expertise</h3>
+              <ul class="expertise-list">
+                <li>
+                  <span class="exp-icon">🎯</span>
+                  <div>
+                    <strong>SIEM & Log Analysis</strong>
+                    <p>Splunk dashboards, SPL queries, log correlation, brute-force detection</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="exp-icon">🧠</span>
+                  <div>
+                    <strong>AI-Driven Threat Detection</strong>
+                    <p>Isolation Forest, Random Forest, UEBA, anomaly detection pipelines</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="exp-icon">🔍</span>
+                  <div>
+                    <strong>IOC Analysis & Enrichment</strong>
+                    <p>VirusTotal, AbuseIPDB, MITRE ATT&CK mapping, threat intel workflows</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="exp-icon">⚡</span>
+                  <div>
+                    <strong>Incident Response Automation</strong>
+                    <p>Alert triage, playbooks, AI-generated SOC reports, risk scoring</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="Work Experience">
-      <h2>Experience</h2>
-    
-      <article class="project">
-        <h3>💼 AI in Cybersecurity Intern — Rooman Technologies</h3>
-        <p style="color:#94a3b8;">Feb 2026 – Present · Remote</p>
-    
-        <p>
-          Worked on developing AI-driven cybersecurity solutions focused on threat detection, log analysis, and SOC workflow simulation. Gained hands-on experience in analyzing real-world security data and building practical tools for identifying and investigating cyber threats.
-        </p>
-    
-        <ul>
-          <li>Built AI-driven SOC solutions for insider threat detection, anomaly detection, phishing analysis, and incident response using Python, ML, and Streamlit dashboards.</li>
-          <li>Automated log parsing, alert triage, IOC enrichment, and threat intelligence workflows using VirusTotal, AbuseIPDB, and MITRE ATT&CK mapping.</li>
-          <li>Analyzed security logs, user activity, and network events to detect suspicious behavior, privilege misuse, and attack patterns in SOC environments.</li>
-          <li>Developed real-time monitoring dashboards for alert management, risk scoring, threat investigation, and security reporting for SOC analyst workflows.</li>
-          <li>Worked on cybersecurity datasets for intrusion detection, behavioral analytics, and AIpowered threat investigation aligned with SIEM operations.</li>
-          <li>Designed end-to-end incident investigation workflows with automated report generation</li>
-        </ul>
-    
-        <p><strong>Tech:</strong> Python, Streamlit, Splunk Concepts, Threat Intelligence APIs, Machine Learning</p>
-      </article>
-    
+    <!-- SKILLS -->
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <div class="section-label reveal-up">Technical Arsenal</div>
+        <h2 class="section-title centered reveal-up delay-1">Skills &amp; Tools</h2>
+        <div class="skills-layout">
+          <div class="skill-category reveal-up delay-1">
+            <div class="skill-cat-header">
+              <span class="skill-cat-icon">🛡️</span>
+              <h3>Security &amp; SOC</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag skill-tag-primary">Splunk SIEM</span>
+              <span class="skill-tag skill-tag-primary">MITRE ATT&CK</span>
+              <span class="skill-tag skill-tag-primary">Incident Response</span>
+              <span class="skill-tag skill-tag-primary">Threat Detection</span>
+              <span class="skill-tag">Alert Triage</span>
+              <span class="skill-tag">Log Correlation</span>
+              <span class="skill-tag">Wireshark</span>
+              <span class="skill-tag">IOC Analysis</span>
+              <span class="skill-tag">UEBA</span>
+              <span class="skill-tag">Insider Threat Detection</span>
+              <span class="skill-tag">Threat Intelligence</span>
+              <span class="skill-tag">SOC Playbooks</span>
+              <span class="skill-tag">Network Traffic Monitoring</span>
+            </div>
+          </div>
+          <div class="skill-category reveal-up delay-2">
+            <div class="skill-cat-header">
+              <span class="skill-cat-icon">🤖</span>
+              <h3>AI/ML for Security</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag skill-tag-primary">Intrusion Detection</span>
+              <span class="skill-tag skill-tag-primary">Anomaly Detection</span>
+              <span class="skill-tag skill-tag-primary">Isolation Forest</span>
+              <span class="skill-tag">Random Forest</span>
+              <span class="skill-tag">Behavioral Analytics</span>
+              <span class="skill-tag">Risk Scoring</span>
+              <span class="skill-tag">Scikit-learn</span>
+              <span class="skill-tag">Rule-Based Detection</span>
+              <span class="skill-tag">SMOTE / Imbalance Handling</span>
+            </div>
+          </div>
+          <div class="skill-category reveal-up delay-3">
+            <div class="skill-cat-header">
+              <span class="skill-cat-icon">💻</span>
+              <h3>Programming &amp; Platforms</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag skill-tag-primary">Python</span>
+              <span class="skill-tag skill-tag-primary">Streamlit</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Git / GitHub</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Google Colab</span>
+              <span class="skill-tag">Active Directory</span>
+              <span class="skill-tag">Azure Entra ID</span>
+            </div>
+          </div>
+          <div class="skill-category reveal-up delay-4">
+            <div class="skill-cat-header">
+              <span class="skill-cat-icon">🔌</span>
+              <h3>APIs &amp; Integrations</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag skill-tag-primary">VirusTotal API</span>
+              <span class="skill-tag skill-tag-primary">AbuseIPDB API</span>
+              <span class="skill-tag">IPInfo API</span>
+              <span class="skill-tag">Groq LLM</span>
+              <span class="skill-tag">TCP/IP · Ports · Protocols</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-label reveal-up">Career</div>
+        <h2 class="section-title reveal-up delay-1">Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item reveal-up delay-1">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <span class="timeline-date">Feb 2026 – Present</span>
+                <span class="timeline-badge timeline-badge-active">Active</span>
+              </div>
+              <h3 class="timeline-role">AI Cybersecurity Intern</h3>
+              <p class="timeline-company">Rooman Technologies &nbsp;·&nbsp; Remote, Bangalore</p>
+              <p class="timeline-desc">Led development of AI-driven SOC platforms, building end-to-end tools from threat detection to automated incident reporting — simulating real enterprise security operations.</p>
+              <ul class="timeline-bullets">
+                <li>Built AI-driven SOC solutions for insider threat detection, anomaly detection, phishing analysis, and incident response using Python, ML, and Streamlit dashboards</li>
+                <li>Automated log parsing, alert triage, IOC enrichment, and threat intelligence workflows using VirusTotal, AbuseIPDB, and MITRE ATT&CK mapping</li>
+                <li>Analyzed security logs, user activity, and network events to detect suspicious behavior, privilege misuse, and attack patterns in SOC environments</li>
+                <li>Developed real-time monitoring dashboards for alert management, risk scoring, threat investigation, and security reporting for SOC analyst workflows</li>
+                <li>Worked on cybersecurity datasets for intrusion detection, behavioral analytics, and AI-powered threat investigation aligned with SIEM operations</li>
+                <li>Designed end-to-end incident investigation workflows with automated report generation</li>
+              </ul>
+              <div class="timeline-tech">
+                <span>Python</span><span>Streamlit</span><span>Splunk Concepts</span><span>Threat Intel APIs</span><span>Machine Learning</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects">
-      <h2>Projects</h2>
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <div class="section-label reveal-up">Work</div>
+        <h2 class="section-title reveal-up delay-1">Featured Projects</h2>
 
-      <!-- ================= AI & ML ================= -->
-      <h3 style="margin-top:10px; color:#9fb1c8;">AI & Machine Learning</h3>
+        <div class="project-category-label reveal-up delay-2">
+          <span class="pcat-line"></span>
+          <span>Cybersecurity &amp; SOC</span>
+          <span class="pcat-line"></span>
+        </div>
 
-      <article class="project">
-        <h3>🧠 ProjectForgeAI – AI-Powered Project Idea Generator</h3>
-        <p>
-          AI system that generates <strong>personalized and unique project ideas</strong> using multi-domain fusion of Artificial Intelligence, Cybersecurity, and Computer Vision based on user-defined weights and skill level.
-        </p>
-        <ul>
-          <li>Multi-domain fusion (AI + Cybersecurity + CV)</li>
-          <li>Custom weight-based idea generation</li>
-          <li>Uses Groq LLM for intelligent synthesis</li>
-          <li>Interactive UI built with Streamlit</li>
-        </ul>
-        <p><strong>Tech:</strong> Python, Streamlit, Groq API</p>
-        <a href="https://projectforgeai.streamlit.app/" class="btn" target="_blank">Live Demo</a>
-        <a href="https://github.com/MyselfAddy/ProjectForgeAI" class="btn" target="_blank">View Code</a>
-      </article>
+        <!-- VEILGUARD - FEATURED -->
+        <div class="project-featured reveal-up delay-2">
+          <div class="project-featured-badge">Internship Flagship Project</div>
+          <div class="project-featured-inner">
+            <div class="project-featured-content">
+              <div class="project-number">01</div>
+              <h3 class="project-title">
+                VEILGuard
+                <span class="project-subtitle">Vigilant Enterprise Insider Leakage Guard</span>
+              </h3>
+              <p class="project-desc">An enterprise-grade cybersecurity platform that detects, analyzes, and simulates insider threats in real time using Machine Learning, UEBA, rule-based detection, and AI-generated SOC analyst reports — complete with a What-If Attack Simulator.</p>
+              <ul class="project-bullets">
+                <li>Insider threat detection via UEBA, Isolation Forest, and rule-based anomaly flagging</li>
+                <li>Risk scoring engine + MITRE ATT&CK mapping for every detected threat</li>
+                <li>What-If Attack Simulator to model insider attack chains and estimate business impact</li>
+                <li>Groq LLM integration for AI-powered SOC reports, remediation recommendations, and incident docs</li>
+                <li>Streamlit dashboard for user behavior profiling, alert monitoring, and high-risk entity investigation</li>
+              </ul>
+              <div class="project-tech-row">
+                <span>Python</span><span>Streamlit</span><span>Isolation Forest</span><span>UEBA</span><span>MITRE ATT&CK</span><span>Groq LLM</span>
+              </div>
+              <div class="project-links">
+                <a href="https://veilguard.streamlit.app/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  Live Demo
+                </a>
+                <a href="https://github.com/MyselfAddy/VEILGuard" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                  View Code
+                </a>
+              </div>
+            </div>
+            <div class="project-featured-visual">
+              <div class="pf-visual-inner">
+                <div class="pf-terminal">
+                  <div class="pf-terminal-bar">
+                    <span class="t-dot t-red"></span>
+                    <span class="t-dot t-yellow"></span>
+                    <span class="t-dot t-green"></span>
+                    <span class="t-title">VEILGuard · Threat Monitor</span>
+                  </div>
+                  <div class="pf-terminal-body">
+                    <div class="t-line t-alert"><span class="t-tag t-crit">CRITICAL</span> User:jsmith — Data exfiltration detected</div>
+                    <div class="t-line t-warn"><span class="t-tag t-warn-tag">HIGH</span> User:admin — Off-hours login · 3:47 AM</div>
+                    <div class="t-line"><span class="t-tag t-med">MED</span> User:rjones — Privilege escalation attempt</div>
+                    <div class="t-line t-muted">Running MITRE ATT&amp;CK mapping…</div>
+                    <div class="t-line t-ok"><span class="t-tag t-ok-tag">MAPPED</span> T1078 · Valid Accounts · TA0001</div>
+                    <div class="t-line t-muted">Generating SOC analyst report via Groq LLM…</div>
+                    <div class="t-line t-ok">Report ready → incident_2026_04_27.pdf</div>
+                    <div class="t-cursor"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <article class="project">
-        <h3>📊 Customer Churn Prediction System</h3>
-        <p>
-          Machine learning system to predict telecom customer churn, enabling businesses to take proactive retention actions using data-driven insights.
-        </p>
-        <ul>
-          <li>Implemented Logistic Regression, Random Forest, XGBoost</li>
-          <li>Achieved strong ROC-AUC (~0.82)</li>
-          <li>Identified key churn factors like contract type and billing patterns</li>
-          <li>Complete ML pipeline from preprocessing to evaluation</li>
-        </ul>
-        <p><strong>Tech:</strong> Python, Scikit-learn, Pandas</p>
-        <a href="https://github.com/MyselfAddy/Machine-Learning" class="btn" target="_blank">View Code</a>
-      </article>
+        <!-- PROJECTS GRID -->
+        <div class="projects-grid">
 
-      <!-- ================= CYBERSECURITY ================= -->
-      <h3 style="margin-top:20px; color:#9fb1c8;">Cybersecurity</h3>
+          <!-- CybersDen -->
+          <div class="project-card reveal-up delay-1">
+            <div class="project-card-header">
+              <span class="project-num-sm">02</span>
+              <div class="project-card-links">
+                <a href="https://cybersden.streamlit.app/" target="_blank" rel="noopener" title="Live Demo">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+                <a href="https://github.com/MyselfAddy/CybersDen" target="_blank" rel="noopener" title="GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3>CybersDen<span class="card-cat">SOC Analyst Toolkit</span></h3>
+            <p>Unified SOC dashboard integrating IOC validation, phishing detection, log analysis, threat intelligence enrichment, and AI-powered incident reporting in one platform.</p>
+            <ul>
+              <li>VirusTotal, AbuseIPDB, IPInfo for automated IOC enrichment</li>
+              <li>AI-powered phishing analysis + MITRE ATT&CK mapping</li>
+              <li>Anomaly detection for brute-force, port scanning, suspicious logins</li>
+              <li>Case management, alert triage, PDF reporting</li>
+            </ul>
+            <div class="card-tech">
+              <span>Python</span><span>Streamlit</span><span>VirusTotal API</span><span>LLMs</span>
+            </div>
+            <div class="card-actions">
+              <a href="https://cybersden.streamlit.app/" target="_blank" class="btn btn-primary btn-sm">Live Demo</a>
+              <a href="https://github.com/MyselfAddy/CybersDen" target="_blank" class="btn btn-outline btn-sm">View Code</a>
+            </div>
+          </div>
 
-      <article class="project">
-        <h3>🛡️ VEILGuard (Vigilant Enterprise Insider Leakage Guard) <span style="color:#0ea5a4;">(Internship Project)</span></h3>
-        <p>
-         VEILGuard is an enterprise-grade cybersecurity platform designed to detect, analyze, and simulate insider threats in real time using Machine Learning, UEBA (User & Entity Behavior Analytics), Rule-Based Detection, and AI-generated SOC analyst reports.
-        </p>
-        <ul>
-          <li>Built an insider threat detection platform using UEBA, Isolation Forest, and rule-based detection for anomalous behavior and privilege misuse monitoring.</li>
-          <li>Implemented risk scoring, MITRE ATT&CK mapping, and real-time alert generation for insider threats, data exfiltration, and abnormal access patterns.</li>
-          <li>Developed a What-If Attack Simulator to model insider attack chains, estimate business impact, and support proactive defense planning</li>
-          <li>Integrated Groq LLM for AI-powered SOC analyst reports, threat explanations, remediation recommendations, and automated incident documentation.</li>
-          <li>Designed a Streamlit dashboard for user behavior profiling, alert monitoring, risk distribution, and high-risk entity investigation workflows.</li>
-        </ul>
-        <p><strong>Tech:</strong> Python, Streamlit, APIs, UEBA, Insider Threats Concepts</p>
-        <a href="https://veilguard.streamlit.app/" class="btn" target="_blank">Live Demo</a>
-        <a href="https://github.com/MyselfAddy/VEILGuard" class="btn" target="_blank">View Code</a>
-      </article>
-      
-      <article class="project">
-        <h3>🛡️ CybersDen – SOC Analyst Toolkit <span style="color:#0ea5a4;"></span></h3>
-        <p>
-          A unified SOC platform that integrates multiple security tools into one dashboard for efficient threat investigation, reducing analyst effort and improving triage speed.
-        </p>
-        <ul>
-          <li>IOC enrichment using VirusTotal, AbuseIPDB, IPInfo</li>
-          <li>Log and network traffic analysis</li>
-          <li>AI-based phishing detection</li>
-          <li>Automated incident report generation</li>
-          <li>Risk scoring for quick decision-making</li>
-        </ul>
-        <p><strong>Tech:</strong> Python, Streamlit, APIs, SIEM Concepts</p>
-        <a href="https://cybersden.streamlit.app/" class="btn" target="_blank">Live Demo</a>
-        <a href="https://github.com/MyselfAddy/CybersDen" class="btn" target="_blank">View Code</a>
-      </article>
+          <!-- Splunk -->
+          <div class="project-card reveal-up delay-2">
+            <div class="project-card-header">
+              <span class="project-num-sm">03</span>
+              <div class="project-card-links">
+                <a href="https://github.com/MyselfAddy/splunk-login-analysis" target="_blank" rel="noopener" title="GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3>Splunk Login Analysis<span class="card-cat">SIEM Investigation</span></h3>
+            <p>Authentication log analysis using Splunk to detect anomalies, identify targeted attacks, and generate actionable security insights via SPL queries and interactive dashboards.</p>
+            <ul>
+              <li>Analyzed ~500 authentication events over 7 days</li>
+              <li>SPL queries for login trends, IP tracking, failure patterns</li>
+              <li>Detected targeted attacks on privileged accounts</li>
+              <li>Identified internal threat patterns and abnormal behavior</li>
+            </ul>
+            <div class="card-tech">
+              <span>Splunk Enterprise</span><span>SPL</span><span>Log Analysis</span>
+            </div>
+            <div class="card-actions">
+              <a href="https://github.com/MyselfAddy/splunk-login-analysis" target="_blank" class="btn btn-outline btn-sm">View Report</a>
+            </div>
+          </div>
 
-      <article class="project">
-        <h3>🔐 Splunk-Based Login Activity & Security Analysis</h3>
-        <p>
-          Conducted authentication log analysis using Splunk to detect anomalies, identify attack patterns, and generate actionable security insights through SPL queries and dashboards.
-        </p>
-        <ul>
-          <li>Analyzed ~500 authentication events over 7 days</li>
-          <li>Built SPL queries for login success/failure, IP tracking, and time trends</li>
-          <li>Designed interactive dashboards for security monitoring</li>
-          <li>Detected targeted attacks on privileged accounts</li>
-          <li>Identified internal threat patterns and abnormal login behavior</li>
-        </ul>
-        <p><strong>Tech:</strong> Splunk Enterprise, SPL, Log Analysis</p>
-        <a href="https://github.com/MyselfAddy/splunk-login-analysis" class="btn" target="_blank">View Report</a>
-      </article>
+          <!-- IDS - Major Project -->
+          <div class="project-card project-card-highlight reveal-up delay-3">
+            <div class="project-card-header">
+              <span class="project-num-sm">04</span>
+              <span class="card-status-badge">Under Publishing</span>
+            </div>
+            <h3>Intelligent Network IDS<span class="card-cat">Major Project</span></h3>
+            <p>Multi-class Intrusion Detection System trained on 2.5M+ real network traffic records from the CICIDS-2017 dataset, achieving near-perfect detection accuracy across multiple attack types.</p>
+            <ul>
+              <li>CICIDS-2017 dataset · 2.5M+ records · SMOTE balanced to ~1M</li>
+              <li>Random Forest, AdaBoost, Extra Trees ensemble models</li>
+              <li>99.86% F1-score — near-perfect multi-class classification</li>
+              <li>Full ML pipeline: preprocessing → feature engineering → evaluation</li>
+            </ul>
+            <div class="card-tech">
+              <span>Python</span><span>Scikit-learn</span><span>Pandas</span><span>Random Forest</span>
+            </div>
+            <p class="card-note">📖 Detailed documentation and repository coming soon.</p>
+          </div>
 
-      <article class="project">
-        <h3>🔐 Intelligent Network Intrusion Detection System
-          <span style="color:#f59e0b;">(Major Project – Under Publishing)</span>
-        </h3>
-        <p>
-          Machine learning-based intrusion detection system trained on large-scale network traffic data to classify multiple attack types with high accuracy.
-        </p>
-        <ul>
-          <li>Dataset: CICIDS2017 (~2.5M records)</li>
-          <li>Balanced dataset using SMOTE (~1M records)</li>
-          <li>Models: Random Forest, AdaBoost, Extra Trees</li>
-          <li>Achieved near 100% accuracy in tree-based models</li>
-          <li>Full ML pipeline implementation</li>
-        </ul>
-        <p><strong>Tech:</strong> Python, Scikit-learn, Pandas</p>
-        <div style="margin-top:10px; padding:10px; background:rgba(255,255,0,0.05); border-radius:6px;">
-          ⚠️ This project is currently under publishing phase. Detailed documentation and repository will be available soon.
         </div>
-      </article>
-    </section>
 
-    <!-- EDUCATION -->
-    <section id="education">
-      <h2>Education</h2>
-      <ul>
-        <li>
-          <strong>B.E. in Artificial Intelligence & Machine Learning</strong> —
-          AMC Engineering College,
-          18th KM Bannerghatta Road,
-          Bengaluru, Karnataka — Affiliated to Visvesvaraya Technological University (VTU).
-          <strong>CGPA:</strong> 7.43 (2022–2026)
-        </li>
-        <li>
-          <strong>12th (PCMCs)</strong> —
-          New Baldwin International Pre University College,
-          Bengaluru, Karnataka —
-          <strong>Percentage:</strong> 89.36% (2019–2021)
-        </li>
-        <li>
-          <strong>10th</strong> —
-          M.Tres High School,
-          Bengaluru, Karnataka —
-          <strong>Percentage:</strong> 88% (2007–2019)
-        </li>
-      </ul>
-    </section>
+        <div class="project-category-label reveal-up" style="margin-top:3rem;">
+          <span class="pcat-line"></span>
+          <span>AI &amp; Machine Learning</span>
+          <span class="pcat-line"></span>
+        </div>
 
-    <!-- CERTIFICATIONS -->
-    <section id="certifications">
-      <h2>Certifications</h2>
-      <div class="cert-grid">
-        <div class="cert-card">
-          <h3>Google Cybersecurity Professional Certification - Coursera (Through Course Audits)</h3>
-        </div>
-        <div class="cert-card">
-          <h3>Cybersecurity Defence Analyst – Cisco Networking Academy</h3>
-        </div>
-        <div class="cert-card">
-          <h3>Oracle Cloud Infrastructure – AI Foundations (2025)</h3>
-          <a href="certificates/eCertificate (2).pdf" target="_blank" class="cert-btn">View Certificate</a>
-        </div>
-        <div class="cert-card">
-          <h3>TATA Cybersecurity Analyst – Forage</h3>
-          <a href="certificates/Forage TATA cybersecurity Certificate.pdf" target="_blank" class="cert-btn">View Certificate</a>
-        </div>
-        <div class="cert-card">
-          <h3>SOC Analyst Learning Path – LetsDefend</h3>
-          <a href="certificates/SOC Analyst Learning Path — LetsDefend.png" target="_blank" class="cert-btn">View Certificate</a>
-        </div>
-        <div class="cert-card">
-          <h3>Machine Learning – Internshala</h3>
-          <a href="certificates/Machine Learning — Internshala Training.png" target="_blank" class="cert-btn">View Certificate</a>
-        </div>
-        <div class="cert-card">
-          <h3>Machine Learning – Scholverse Educare</h3>
-          <a href="certificates/Machine Learning — Scholverse Educare.png" target="_blank" class="cert-btn">View Certificate</a>
-        </div>
-        <div class="cert-card">
-          <h3>Splunk Ignite – Devtown (Google Developer Group)</h3>
-          <a href="certificates/Splunk Ignite — Devtown , google.png" target="_blank" class="cert-btn">View Certificate</a>
-        </div>
-        <div class="cert-card">
-          <h3>Splunk Ignite – Devtown (Microsoft Student Chapter)</h3>
-          <a href="certificates/Splunk Ignite — Devtown, microsoft.png" target="_blank" class="cert-btn">View Certificate</a>
-        </div>
-        <div class="cert-card">
-          <h3>Splunk Ignite – Devtown (Bootcamp Completion)</h3>
-          <a href="certificates/Splunk Ignite — Devtown.png" target="_blank" class="cert-btn">View Certificate</a>
+        <div class="projects-grid">
+
+          <!-- ProjectForgeAI -->
+          <div class="project-card reveal-up delay-1">
+            <div class="project-card-header">
+              <span class="project-num-sm">05</span>
+              <div class="project-card-links">
+                <a href="https://projectforgeai.streamlit.app/" target="_blank" rel="noopener" title="Live Demo">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+                <a href="https://github.com/MyselfAddy/ProjectForgeAI" target="_blank" rel="noopener" title="GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3>ProjectForgeAI<span class="card-cat">AI · Idea Generator</span></h3>
+            <p>AI system that generates personalized, unique project ideas using multi-domain fusion of Artificial Intelligence, Cybersecurity, and Computer Vision — tailored by user weights and skill level.</p>
+            <ul>
+              <li>Multi-domain fusion: AI + Cybersecurity + CV</li>
+              <li>Custom weight-based idea generation algorithm</li>
+              <li>Groq LLM for intelligent, context-aware synthesis</li>
+            </ul>
+            <div class="card-tech">
+              <span>Python</span><span>Streamlit</span><span>Groq API</span>
+            </div>
+            <div class="card-actions">
+              <a href="https://projectforgeai.streamlit.app/" target="_blank" class="btn btn-primary btn-sm">Live Demo</a>
+              <a href="https://github.com/MyselfAddy/ProjectForgeAI" target="_blank" class="btn btn-outline btn-sm">View Code</a>
+            </div>
+          </div>
+
+          <!-- Customer Churn -->
+          <div class="project-card reveal-up delay-2">
+            <div class="project-card-header">
+              <span class="project-num-sm">06</span>
+              <div class="project-card-links">
+                <a href="https://github.com/MyselfAddy/Machine-Learning" target="_blank" rel="noopener" title="GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3>Customer Churn Prediction<span class="card-cat">ML · Predictive Analytics</span></h3>
+            <p>Machine learning system to predict telecom customer churn — enabling proactive retention strategies through data-driven insights and model interpretability.</p>
+            <ul>
+              <li>Logistic Regression, Random Forest, XGBoost ensemble</li>
+              <li>ROC-AUC ~0.82 — strong predictive performance</li>
+              <li>Key churn drivers: contract type and billing patterns</li>
+              <li>Full ML pipeline from raw data to evaluation</li>
+            </ul>
+            <div class="card-tech">
+              <span>Python</span><span>Scikit-learn</span><span>XGBoost</span><span>Pandas</span>
+            </div>
+            <div class="card-actions">
+              <a href="https://github.com/MyselfAddy/Machine-Learning" target="_blank" class="btn btn-outline btn-sm">View Code</a>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- LANGUAGES -->
-    <section id="languages">
-      <h2>Languages</h2>
-      <p>English (Conversational), Hindi (Native), Odia (Native), Kannada (Spoken)</p>
+    <!-- CERTIFICATIONS -->
+    <section class="section" id="certifications">
+      <div class="container">
+        <div class="section-label reveal-up">Credentials</div>
+        <h2 class="section-title reveal-up delay-1">Certifications</h2>
+        <div class="cert-grid">
+          <div class="cert-card reveal-up delay-1">
+            <div class="cert-issuer">Coursera</div>
+            <h3>Google Cybersecurity Professional Certificate</h3>
+            <p>Comprehensive program covering threat detection, incident response, network security, and security operations fundamentals.</p>
+          </div>
+          <div class="cert-card reveal-up delay-2">
+            <div class="cert-issuer">Cisco Networking Academy</div>
+            <h3>Cybersecurity Defence Analyst</h3>
+            <p>Defense-focused cybersecurity training covering threat analysis, network defense strategies, and SOC operations.</p>
+          </div>
+          <div class="cert-card reveal-up delay-3">
+            <div class="cert-issuer">Oracle Cloud · 2025</div>
+            <h3>OCI AI Foundations</h3>
+            <p>Oracle Cloud Infrastructure AI and machine learning foundations certification.</p>
+            <a href="certificates/eCertificate (2).pdf" target="_blank" class="cert-btn-link">View Certificate →</a>
+          </div>
+          <div class="cert-card reveal-up delay-1">
+            <div class="cert-issuer">Forage · TATA</div>
+            <h3>TATA Cybersecurity Analyst Simulation</h3>
+            <p>Virtual job simulation covering IAM, cybersecurity strategy, and real-world enterprise security challenges.</p>
+            <a href="certificates/Forage TATA cybersecurity Certificate.pdf" target="_blank" class="cert-btn-link">View Certificate →</a>
+          </div>
+          <div class="cert-card reveal-up delay-2">
+            <div class="cert-issuer">LetsDefend</div>
+            <h3>SOC Analyst Learning Path</h3>
+            <p>Hands-on SOC analyst training with real alert investigation, log analysis, and incident response on a live SIEM platform.</p>
+            <a href="certificates/SOC Analyst Learning Path — LetsDefend.png" target="_blank" class="cert-btn-link">View Certificate →</a>
+          </div>
+          <div class="cert-card reveal-up delay-3">
+            <div class="cert-issuer">Internshala</div>
+            <h3>Machine Learning</h3>
+            <p>Structured ML training covering supervised learning, model evaluation, and real-world dataset implementation.</p>
+            <a href="certificates/Machine Learning — Internshala Training.png" target="_blank" class="cert-btn-link">View Certificate →</a>
+          </div>
+          <div class="cert-card reveal-up delay-1">
+            <div class="cert-issuer">Scholverse Educare</div>
+            <h3>Machine Learning</h3>
+            <p>Additional ML certification covering core algorithms, model building, and data preprocessing techniques.</p>
+            <a href="certificates/Machine Learning — Scholverse Educare.png" target="_blank" class="cert-btn-link">View Certificate →</a>
+          </div>
+          <div class="cert-card reveal-up delay-2">
+            <div class="cert-issuer">Devtown · Google Developer Group</div>
+            <h3>Splunk Ignite Bootcamp</h3>
+            <p>Splunk SIEM fundamentals — dashboards, alerts, SPL queries, log analysis, and threat detection workflows.</p>
+            <a href="certificates/Splunk Ignite — Devtown , google.png" target="_blank" class="cert-btn-link">View Certificate →</a>
+          </div>
+          <div class="cert-card reveal-up delay-3">
+            <div class="cert-issuer">Devtown · Microsoft Student Chapter</div>
+            <h3>Splunk Ignite — Microsoft Edition</h3>
+            <p>Extended Splunk training through the Microsoft Student Chapter collaboration with Devtown.</p>
+            <a href="certificates/Splunk Ignite — Devtown, microsoft.png" target="_blank" class="cert-btn-link">View Certificate →</a>
+          </div>
+          <div class="cert-card reveal-up delay-1">
+            <div class="cert-issuer">Devtown</div>
+            <h3>Splunk Bootcamp Completion</h3>
+            <p>Full Splunk bootcamp completion certification — practical SIEM operations and security monitoring.</p>
+            <a href="certificates/Splunk Ignite — Devtown.png" target="_blank" class="cert-btn-link">View Certificate →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section section-alt" id="education">
+      <div class="container">
+        <div class="section-label reveal-up">Academic Background</div>
+        <h2 class="section-title reveal-up delay-1">Education</h2>
+        <div class="edu-grid">
+          <div class="edu-card edu-card-primary reveal-up delay-1">
+            <div class="edu-year">2022 – 2026</div>
+            <div class="edu-degree-wrap">
+              <div class="edu-icon">🎓</div>
+              <div>
+                <h3>B.E. in Artificial Intelligence &amp; Machine Learning</h3>
+                <p class="edu-institute">AMC Engineering College, Bangalore</p>
+                <p class="edu-affil">Affiliated to Visvesvaraya Technological University (VTU)</p>
+              </div>
+            </div>
+            <div class="edu-meta">
+              <span class="edu-score">CGPA: 7.43</span>
+              <span>18th KM Bannerghatta Road, Bengaluru, Karnataka</span>
+            </div>
+          </div>
+          <div class="edu-card reveal-up delay-2">
+            <div class="edu-year">2019 – 2021</div>
+            <div class="edu-degree-wrap">
+              <div class="edu-icon">📘</div>
+              <div>
+                <h3>12th Standard (PCMCs)</h3>
+                <p class="edu-institute">New Baldwin International PU College, Bangalore</p>
+              </div>
+            </div>
+            <div class="edu-meta">
+              <span class="edu-score">89.36%</span>
+            </div>
+          </div>
+          <div class="edu-card reveal-up delay-3">
+            <div class="edu-year">2018 – 2019</div>
+            <div class="edu-degree-wrap">
+              <div class="edu-icon">📗</div>
+              <div>
+                <h3>10th Standard</h3>
+                <p class="edu-institute">M.Tres High School, Bangalore</p>
+              </div>
+            </div>
+            <div class="edu-meta">
+              <span class="edu-score">88%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section class="section resume-section" id="resume">
+      <div class="container">
+        <div class="resume-inner reveal-up">
+          <div class="resume-content">
+            <div class="section-label" style="color:var(--accent);">Resume</div>
+            <h2>Ready to contribute<br/>from day one.</h2>
+            <p>My resume details my hands-on experience with SIEM, threat detection tools, AI/ML security projects, and real-world SOC workflows. Available for immediate opportunities.</p>
+            <div class="resume-actions">
+              <a href="Aditya_Senapati_Resume_L1.pdf" target="_blank" class="btn btn-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+                View Resume
+              </a>
+              <a href="Aditya_Senapati_Resume_L1.pdf" download class="btn btn-outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download Resume
+              </a>
+            </div>
+          </div>
+          <div class="resume-visual">
+            <div class="resume-doc-preview">
+              <div class="rdp-header">
+                <div class="rdp-dot"></div>
+                <div class="rdp-dot"></div>
+                <div class="rdp-dot"></div>
+              </div>
+              <div class="rdp-body">
+                <div class="rdp-name-line"></div>
+                <div class="rdp-sub-line"></div>
+                <div class="rdp-divider"></div>
+                <div class="rdp-section-label"></div>
+                <div class="rdp-text-line" style="width:95%"></div>
+                <div class="rdp-text-line" style="width:88%"></div>
+                <div class="rdp-text-line" style="width:92%"></div>
+                <div class="rdp-divider"></div>
+                <div class="rdp-section-label"></div>
+                <div class="rdp-text-line" style="width:80%"></div>
+                <div class="rdp-text-line" style="width:70%"></div>
+              </div>
+              <div class="rdp-glow"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact-cta">
-      <h2>Hire / Intern</h2>
-      <p>I’m seeking Security Analyst / SOC Intern roles. Reach out — I respond quickly.</p>
-      <a class="btn" href="mailto:adityasenapati25@gmail.com">Email Me</a>
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-label reveal-up">Get In Touch</div>
+        <h2 class="section-title centered reveal-up delay-1">Open to Opportunities</h2>
+        <p class="section-sub centered reveal-up delay-2">I'm actively seeking <strong>SOC Analyst L1</strong>, <strong>Cybersecurity Analyst</strong>, and <strong>Security Operations Intern</strong> roles. I respond quickly — let's talk.</p>
+        <div class="contact-grid reveal-up delay-3">
+          <a href="mailto:adityasenapati25@gmail.com" class="contact-card">
+            <div class="contact-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            </div>
+            <h4>Email</h4>
+            <p>adityasenapati25@gmail.com</p>
+            <span class="contact-card-cta">Send Email →</span>
+          </a>
+          <a href="https://www.linkedin.com/in/aditya-senapati-r-62bb87309/" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zm2-3a2 2 0 110-4 2 2 0 010 4z"/></svg>
+            </div>
+            <h4>LinkedIn</h4>
+            <p>aditya-senapati-r</p>
+            <span class="contact-card-cta">Connect →</span>
+          </a>
+          <a href="https://github.com/MyselfAddy" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            </div>
+            <h4>GitHub</h4>
+            <p>MyselfAddy</p>
+            <span class="contact-card-cta">View Projects →</span>
+          </a>
+          <a href="tel:+919620881655" class="contact-card">
+            <div class="contact-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <h4>Phone</h4>
+            <p>+91 96208 81655</p>
+            <span class="contact-card-cta">Call Now →</span>
+          </a>
+        </div>
+        <div class="contact-languages reveal-up delay-4">
+          <p><strong>Languages:</strong> English (Conversational) &nbsp;·&nbsp; Hindi (Native) &nbsp;·&nbsp; Odia (Native) &nbsp;·&nbsp; Kannada (Spoken)</p>
+        </div>
+      </div>
     </section>
+
   </main>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p>© <span id="year"></span> Aditya Senapati R · Based in Bangalore, Karnataka, India</p>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="footer-logo">AS<span style="color:var(--accent)">.</span></span>
+        <p>Aditya Senapati R &nbsp;·&nbsp; Bangalore, Karnataka, India</p>
+        <p>Aspiring SOC Analyst · AI/ML Engineer · Open to Opportunities</p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/aditya-senapati-r-62bb87309/" target="_blank">LinkedIn</a>
+          <a href="https://github.com/MyselfAddy" target="_blank">GitHub</a>
+          <a href="Aditya_Senapati_Resume_L1.pdf" target="_blank">Resume</a>
+          <a href="mailto:adityasenapati25@gmail.com">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Aditya Senapati R. Built with purpose.</p>
     </div>
   </footer>
 
   <script>
-    document.getElementById('year').innerText = new Date().getFullYear();
-    // Updated with your real profiles
-    document.getElementById('linkedin').href = "https://www.linkedin.com/in/aditya-senapati-r-62bb87309/";
-    document.getElementById('github').href = "https://github.com/MyselfAddy";
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Nav scroll behavior
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav-scrolled', window.scrollY > 60);
+    });
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('nav-open');
+      navToggle.classList.toggle('nav-toggle-open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('nav-open');
+        navToggle.classList.remove('nav-toggle-open');
+      });
+    });
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal-up, .reveal-right');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Terminal typing animation
+    const termLines = document.querySelectorAll('.pf-terminal-body .t-line');
+    termLines.forEach((line, i) => {
+      line.style.opacity = '0';
+      line.style.animation = `none`;
+      setTimeout(() => {
+        line.style.transition = 'opacity 0.4s';
+        line.style.opacity = '1';
+      }, 600 + i * 500);
+    });
   </script>
 </body>
 </html>
