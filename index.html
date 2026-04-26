@@ -3,812 +3,2312 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aditya Senapati R — SOC Analyst · AI/ML & Cybersecurity</title>
-  <meta name="description" content="Aditya Senapati R — Aspiring SOC Analyst with hands-on experience in SIEM monitoring, threat detection, incident response, UEBA, and AI-driven security automation. Projects: VEILGuard, CybersDen, Intrusion Detection System, Splunk SIEM analysis." />
-  <meta name="keywords" content="SOC Analyst, Cybersecurity, SIEM, Splunk, Threat Detection, Incident Response, MITRE ATT&CK, Python, AI Security, Bangalore" />
-  <meta property="og:title" content="Aditya Senapati R — SOC Analyst · Cybersecurity" />
-  <meta property="og:description" content="Aspiring SOC Analyst building AI-powered security tools. Available for SOC L1, Security Analyst, and Cybersecurity Intern roles." />
-  <meta property="og:type" content="website" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <title>Aditya Senapati R — AI/ML & Cybersecurity</title>
+  <meta name="description" content="Aditya Senapati R — AI/ML & Cybersecurity Engineer. SOC Analyst, SIEM, Threat Detection, Machine Learning." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─────────────────────────────────────
+       TOKENS
+    ───────────────────────────────────── */
+    :root {
+      --bg:       #03070f;
+      --surface:  #070d1a;
+      --card:     #0a1222;
+      --card-h:   #0d1629;
+      --border:   rgba(56, 189, 248, 0.1);
+      --border-h: rgba(56, 189, 248, 0.28);
+
+      --cyan:     #38bdf8;
+      --cyan-dim: rgba(56,189,248,0.12);
+      --teal:     #2dd4bf;
+      --violet:   #818cf8;
+      --green:    #34d399;
+      --amber:    #fbbf24;
+      --red:      #f87171;
+
+      --text:     #e2eaf5;
+      --muted:    #5e7a9a;
+      --subtle:   #8faabf;
+
+      --ff-head:  'Syne', sans-serif;
+      --ff-mono:  'DM Mono', monospace;
+      --ff-body:  'Inter', sans-serif;
+
+      --glow-c:   0 0 40px rgba(56,189,248,0.18);
+      --glow-s:   0 0 20px rgba(56,189,248,0.12);
+      --rad:      14px;
+      --rad-sm:   8px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--ff-body);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 2px; }
+
+    /* ─────────────────────────────────────
+       BACKGROUND LAYERS
+    ───────────────────────────────────── */
+    .bg-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Grid */
+    .bg-grid {
+      background-image:
+        linear-gradient(rgba(56,189,248,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56,189,248,0.025) 1px, transparent 1px);
+      background-size: 72px 72px;
+    }
+
+    /* Glow orbs */
+    .bg-orbs {
+      background:
+        radial-gradient(ellipse 70% 50% at 5% 15%, rgba(56,189,248,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 95% 80%, rgba(129,140,248,0.06) 0%, transparent 55%),
+        radial-gradient(ellipse 45% 35% at 50% 50%, rgba(45,212,191,0.04) 0%, transparent 60%);
+    }
+
+    /* Scan line */
+    .bg-scan {
+      background: linear-gradient(180deg,
+        transparent 0%,
+        transparent calc(var(--scan-y, 50%) - 1px),
+        rgba(56,189,248,0.07) calc(var(--scan-y, 50%) - 1px),
+        rgba(56,189,248,0.07) var(--scan-y, 50%),
+        transparent var(--scan-y, 50%)
+      );
+      animation: scanMove 10s linear infinite;
+    }
+    @keyframes scanMove {
+      0%   { --scan-y: -2%; }
+      100% { --scan-y: 102%; }
+    }
+
+    /* Noise */
+    .bg-noise {
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px;
+    }
+
+    /* Particles */
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .p-dot {
+      position: absolute;
+      border-radius: 50%;
+      animation: pdrift linear infinite;
+      opacity: 0;
+    }
+    @keyframes pdrift {
+      0%   { transform: translateY(100vh); opacity: 0; }
+      8%   { opacity: 1; }
+      92%  { opacity: 0.5; }
+      100% { transform: translateY(-6vh) translateX(40px); opacity: 0; }
+    }
+
+    /* ─────────────────────────────────────
+       NAV
+    ───────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      background: rgba(3,7,15,0.8);
+      backdrop-filter: blur(24px) saturate(1.4);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .nav-logo {
+      font-family: var(--ff-mono);
+      font-size: 0.95rem;
+      color: var(--cyan);
+      text-decoration: none;
+      letter-spacing: 0.12em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-logo-bracket { color: var(--muted); }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 4px;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 6px 13px;
+      border-radius: 6px;
+      font-family: var(--ff-mono);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.25s, background 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+      background: var(--cyan-dim);
+    }
+
+    .nav-pill {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      color: var(--green);
+      background: rgba(52,211,153,0.08);
+      border: 1px solid rgba(52,211,153,0.22);
+      padding: 5px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .nav-pill-dot {
+      width: 6px; height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pdot 2s ease-in-out infinite;
+    }
+    @keyframes pdot {
+      0%,100% { transform: scale(1); opacity:1; }
+      50%      { transform: scale(1.5); opacity: 0.5; }
+    }
+
+    /* ─────────────────────────────────────
+       WRAPPER
+    ───────────────────────────────────── */
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ─────────────────────────────────────
+       HERO
+    ───────────────────────────────────── */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 62px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 80px;
+      align-items: center;
+      padding: 80px 0 60px;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--ff-mono);
+      font-size: 0.72rem;
+      color: var(--cyan);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-eyebrow::before {
+      content:'';
+      width: 28px; height: 1px;
+      background: var(--cyan);
+      opacity: 0.6;
+    }
+
+    h1.hero-name {
+      font-family: var(--ff-head);
+      font-size: clamp(3rem, 6.5vw, 5.2rem);
+      font-weight: 800;
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    .name-solid { color: var(--text); }
+    .name-outline {
+      color: transparent;
+      -webkit-text-stroke: 1.5px var(--cyan);
+      display: block;
+      position: relative;
+    }
+
+    /* Glitch on last name */
+    .name-outline::before,
+    .name-outline::after {
+      content: attr(data-t);
+      position: absolute;
+      left: 0; top: 0;
+      color: transparent;
+      -webkit-text-stroke: 1.5px var(--cyan);
+      animation: glitch-off 6s infinite;
+    }
+    .name-outline::before { -webkit-text-stroke-color: var(--teal); }
+    .name-outline::after  { -webkit-text-stroke-color: var(--violet); }
+
+    @keyframes glitch-off {
+      0%,92%,100% { opacity:0; transform:none; }
+      93% { opacity:0.5; transform:translate(-3px,0) skewX(-3deg); }
+      95% { opacity:0.5; transform:translate(3px,0); }
+      97% { opacity:0; }
+    }
+
+    .hero-role {
+      font-size: 1.05rem;
+      color: var(--subtle);
+      font-weight: 300;
+      margin-bottom: 22px;
+      line-height: 1.6;
+    }
+
+    .hero-role strong { color: var(--cyan); font-weight: 500; }
+
+    .hero-desc {
+      font-size: 0.97rem;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.85;
+      margin-bottom: 36px;
+    }
+
+    /* TERMINAL */
+    .term {
+      background: rgba(10,18,34,0.9);
+      border: 1px solid var(--border);
+      border-radius: var(--rad);
+      padding: 18px 22px 14px;
+      margin-bottom: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .term::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(56,189,248,0.02) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .term-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .term-dot {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+    }
+
+    .term-dot:nth-child(1) { background: #f87171; }
+    .term-dot:nth-child(2) { background: #fbbf24; }
+    .term-dot:nth-child(3) { background: #34d399; }
+
+    .term-title {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      margin-left: auto;
+      letter-spacing: 0.08em;
+    }
+
+    .term-line {
+      font-family: var(--ff-mono);
+      font-size: 0.78rem;
+      line-height: 2.1;
+      color: var(--muted);
+    }
+
+    .t-ps  { color: var(--cyan); }
+    .t-cmd { color: var(--text); }
+    .t-ok  { color: var(--green); }
+    .t-inf { color: var(--cyan); }
+
+    .t-cursor {
+      display: inline-block;
+      width: 7px; height: 13px;
+      background: var(--cyan);
+      vertical-align: text-bottom;
+      margin-left: 2px;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* BUTTONS */
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border-radius: var(--rad-sm);
+      font-family: var(--ff-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.25s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-fill {
+      background: var(--cyan);
+      color: var(--bg);
+      box-shadow: 0 0 24px rgba(56,189,248,0.22);
+    }
+
+    .btn-fill:hover {
+      background: #7ee8fa;
+      box-shadow: 0 0 40px rgba(56,189,248,0.38);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--subtle);
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover {
+      color: var(--cyan);
+      border-color: var(--border-h);
+      background: var(--cyan-dim);
+      transform: translateY(-2px);
+    }
+
+    /* CONTACT LINKS */
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .hero-links a {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.82rem;
+      font-family: var(--ff-mono);
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .hero-links a:hover { color: var(--cyan); }
+
+    .hl-icon {
+      width: 28px; height: 28px;
+      border-radius: 7px;
+      background: var(--cyan-dim);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .hero-links a:hover .hl-icon {
+      border-color: var(--border-h);
+      background: rgba(56,189,248,0.18);
+    }
+
+    /* PHOTO */
+    .photo-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo-ring-outer {
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
+
+    /* Rotating conic ring */
+    .photo-ring-outer::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 0deg,
+        var(--cyan),
+        var(--teal),
+        var(--violet),
+        var(--cyan)
+      );
+      animation: spin 10s linear infinite;
+      z-index: 0;
+    }
+
+    /* Background fill gap */
+    .photo-ring-outer::after {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border-radius: 50%;
+      background: var(--bg);
+      z-index: 1;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .photo-inner {
+      position: absolute;
+      inset: 6px;
+      border-radius: 50%;
+      overflow: hidden;
+      z-index: 2;
+      background: var(--card);
+    }
+
+    /* Fallback gradient shown when image fails / not loaded yet */
+    .photo-inner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 40% 30%, rgba(56,189,248,0.18), rgba(129,140,248,0.12), var(--card));
+      z-index: 0;
+    }
+
+    .photo-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      position: relative;
+      z-index: 1;
+      display: block;
+    }
+
+    /* Placeholder silhouette (shown if image fails) */
+    .photo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    .photo-badge {
+      position: absolute;
+      bottom: 12px;
+      right: -12px;
+      z-index: 3;
+      background: var(--card);
+      border: 1px solid var(--border-h);
+      border-radius: 10px;
+      padding: 8px 13px;
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      color: var(--cyan);
+      box-shadow: var(--glow-s);
+    }
+
+    /* Decorative circuit line */
+    .photo-decor {
+      position: absolute;
+      top: -20px;
+      left: -30px;
+      width: 80px;
+      height: 80px;
+      z-index: 0;
+      opacity: 0.25;
+    }
+
+    /* ─────────────────────────────────────
+       STATS STRIP
+    ───────────────────────────────────── */
+    .stats-strip {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(10,18,34,0.5);
+    }
+
+    .stats-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+    }
+
+    .stat-cell {
+      flex: 1;
+      padding: 30px 20px;
+      text-align: center;
+      position: relative;
+      transition: background 0.25s;
+    }
+
+    .stat-cell + .stat-cell {
+      border-left: 1px solid var(--border);
+    }
+
+    .stat-cell:hover { background: var(--cyan-dim); }
+
+    .stat-cell::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 20%; right: 20%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .stat-cell:hover::after { transform: scaleX(1); }
+
+    .stat-n {
+      display: block;
+      font-family: var(--ff-head);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--cyan);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .stat-l {
+      display: block;
+      font-family: var(--ff-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 5px;
+    }
+
+    /* ─────────────────────────────────────
+       SECTION LAYOUT
+    ───────────────────────────────────── */
+    .section {
+      padding: 90px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section + .section {
+      border-top: 1px solid var(--border);
+    }
+
+    .section-tag {
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      color: var(--cyan);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--ff-head);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.03em;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 52px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -10px;
+      width: 36px; height: 3px;
+      background: var(--cyan);
+      border-radius: 2px;
+    }
+
+    /* ─────────────────────────────────────
+       ABOUT
+    ───────────────────────────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .about-prose {
+      font-size: 0.97rem;
+      color: var(--subtle);
+      line-height: 1.9;
+    }
+
+    .about-prose p + p { margin-top: 18px; }
+
+    .hl { color: var(--cyan); font-weight: 500; }
+    .hl2 { color: var(--teal); font-weight: 500; }
+
+    .info-stack { display: flex; flex-direction: column; gap: 12px; }
+
+    .info-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--rad);
+      padding: 15px 18px;
+      transition: border-color 0.25s, background 0.25s, transform 0.25s;
+    }
+
+    .info-row:hover {
+      border-color: var(--border-h);
+      background: var(--card-h);
+      transform: translateX(5px);
+    }
+
+    .info-icon {
+      width: 38px; height: 38px;
+      background: var(--cyan-dim);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .info-lbl {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .info-val {
+      font-size: 0.88rem;
+      color: var(--text);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    /* ─────────────────────────────────────
+       SKILLS
+    ───────────────────────────────────── */
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .skill-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--rad);
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.25s, background 0.25s;
+    }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--teal));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s;
+    }
+
+    .skill-card:hover { border-color: var(--border-h); background: var(--card-h); }
+    .skill-card:hover::before { transform: scaleX(1); }
+
+    .sk-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .sk-icon {
+      width: 34px; height: 34px;
+      background: var(--cyan-dim);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+    }
+
+    .sk-title {
+      font-family: var(--ff-head);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 7px; }
+
+    .tag {
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      font-weight: 400;
+      padding: 4px 10px;
+      border-radius: 5px;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+    }
+
+    .tag:hover { transform: translateY(-1px); }
+
+    .tag-c { background: rgba(56,189,248,0.1); color: var(--cyan); border: 1px solid rgba(56,189,248,0.2); }
+    .tag-t { background: rgba(45,212,191,0.1); color: var(--teal); border: 1px solid rgba(45,212,191,0.2); }
+    .tag-v { background: rgba(129,140,248,0.1); color: var(--violet); border: 1px solid rgba(129,140,248,0.2); }
+    .tag-a { background: rgba(251,191,36,0.08); color: var(--amber); border: 1px solid rgba(251,191,36,0.18); }
+
+    /* ─────────────────────────────────────
+       EXPERIENCE
+    ───────────────────────────────────── */
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 4px; top: 12px; bottom: 12px;
+      width: 1px;
+      background: linear-gradient(180deg, var(--cyan), rgba(56,189,248,0.1));
+    }
+
+    .tl-item {
+      position: relative;
+      margin-bottom: 42px;
+    }
+
+    .tl-dot {
+      position: absolute;
+      left: -44px; top: 8px;
+      width: 10px; height: 10px;
+      background: var(--cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 14px rgba(56,189,248,0.55);
+    }
+
+    .exp-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--rad);
+      padding: 28px;
+      transition: border-color 0.25s, background 0.25s;
+    }
+
+    .exp-card:hover { border-color: var(--border-h); background: var(--card-h); }
+
+    .exp-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .exp-company {
+      font-family: var(--ff-head);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .exp-badge {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      padding: 3px 9px;
+      border-radius: 20px;
+      background: rgba(52,211,153,0.08);
+      color: var(--green);
+      border: 1px solid rgba(52,211,153,0.22);
+    }
+
+    .exp-role {
+      font-size: 0.9rem;
+      color: var(--cyan);
+      font-weight: 500;
+      margin-bottom: 3px;
+    }
+
+    .exp-date {
+      font-family: var(--ff-mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .exp-p {
+      font-size: 0.9rem;
+      color: var(--subtle);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .exp-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 18px;
+    }
+
+    .exp-list li {
+      font-size: 0.875rem;
+      color: var(--subtle);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.7;
+    }
+
+    .exp-list li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+      font-size: 1rem;
+    }
+
+    .tag-row { display: flex; flex-wrap: wrap; gap: 7px; }
+
+    /* ─────────────────────────────────────
+       PROJECTS
+    ───────────────────────────────────── */
+    .proj-cat-label {
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 48px 0 22px;
+    }
+
+    .proj-cat-label:first-of-type { margin-top: 0; }
+
+    .proj-cat-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 18px;
+    }
+
+    .proj-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--rad);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proj-card.featured {
+      background: linear-gradient(135deg, rgba(56,189,248,0.04), rgba(45,212,191,0.03));
+      border-color: rgba(56,189,248,0.18);
+    }
+
+    .proj-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .proj-card:hover {
+      border-color: var(--border-h);
+      transform: translateY(-5px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.45), var(--glow-s);
+    }
+
+    .proj-card:hover::before { opacity: 1; }
+
+    .proj-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      gap: 10px;
+    }
+
+    .proj-icon {
+      font-size: 1.7rem;
+      line-height: 1;
+    }
+
+    .proj-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+
+    .pbadge {
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      padding: 3px 8px;
+      border-radius: 20px;
+    }
+
+    .pb-intern { background: rgba(56,189,248,0.1); color: var(--cyan); border: 1px solid rgba(56,189,248,0.22); }
+    .pb-live   { background: rgba(52,211,153,0.1); color: var(--green); border: 1px solid rgba(52,211,153,0.22); }
+    .pb-major  { background: rgba(251,191,36,0.08); color: var(--amber); border: 1px solid rgba(251,191,36,0.18); }
+    .pb-boot   { background: rgba(129,140,248,0.1); color: var(--violet); border: 1px solid rgba(129,140,248,0.22); }
+
+    .proj-name {
+      font-family: var(--ff-head);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .proj-desc {
+      font-size: 0.875rem;
+      color: var(--subtle);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .proj-feats {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .proj-feats li {
+      font-size: 0.82rem;
+      color: var(--muted);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.65;
+    }
+
+    .proj-feats li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+      font-size: 0.68rem;
+      top: 3px;
+    }
+
+    .proj-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .tech-chip {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      border: 1px solid rgba(255,255,255,0.07);
+      letter-spacing: 0.05em;
+    }
+
+    .proj-links {
+      margin-top: auto;
+      display: flex;
+      gap: 9px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .plink {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 7px 13px;
+      border-radius: var(--rad-sm);
+      transition: all 0.25s;
+    }
+
+    .plink-demo { background: var(--cyan); color: var(--bg); }
+    .plink-demo:hover { background: #7ee8fa; box-shadow: 0 0 20px rgba(56,189,248,0.3); }
+
+    .plink-code { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+    .plink-code:hover { color: var(--cyan); border-color: var(--border-h); background: var(--cyan-dim); }
+
+    .proj-wip {
+      font-family: var(--ff-mono);
+      font-size: 0.75rem;
+      color: var(--amber);
+      background: rgba(251,191,36,0.06);
+      border: 1px solid rgba(251,191,36,0.15);
+      border-radius: var(--rad-sm);
+      padding: 10px 14px;
+      margin-top: 10px;
+    }
+
+    /* ─────────────────────────────────────
+       EDUCATION
+    ───────────────────────────────────── */
+    .edu-stack { display: flex; flex-direction: column; gap: 14px; }
+
+    .edu-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--rad);
+      padding: 22px 26px;
+      display: grid;
+      grid-template-columns: 50px 1fr auto;
+      gap: 18px;
+      align-items: center;
+      transition: border-color 0.25s, background 0.25s;
+    }
+
+    .edu-card:hover { border-color: var(--border-h); background: var(--card-h); }
+
+    .edu-icon {
+      width: 50px; height: 50px;
+      background: var(--cyan-dim);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .edu-deg {
+      font-family: var(--ff-head);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+
+    .edu-school { font-size: 0.875rem; color: var(--subtle); margin-bottom: 2px; }
+    .edu-loc { font-size: 0.78rem; color: var(--muted); }
+
+    .edu-score-wrap { text-align: right; }
+
+    .edu-score {
+      display: block;
+      font-family: var(--ff-head);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--cyan);
+      letter-spacing: -0.03em;
+    }
+
+    .edu-score-lbl {
+      display: block;
+      font-family: var(--ff-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .edu-year {
+      display: block;
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* ─────────────────────────────────────
+       CERTIFICATIONS
+    ───────────────────────────────────── */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
+    .cert-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--rad);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color 0.25s, background 0.25s, transform 0.25s;
+    }
+
+    .cert-card:hover {
+      border-color: var(--border-h);
+      background: var(--card-h);
+      transform: translateY(-3px);
+    }
+
+    .cert-issuer {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+
+    .cert-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    .cert-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      background: var(--cyan-dim);
+      color: var(--cyan);
+      border: 1px solid rgba(56,189,248,0.18);
+      width: fit-content;
+      transition: all 0.2s;
+    }
+
+    .cert-btn:hover { background: var(--cyan); color: var(--bg); }
+
+    /* ─────────────────────────────────────
+       RESUME
+    ───────────────────────────────────── */
+    .resume-card {
+      background: linear-gradient(135deg, rgba(56,189,248,0.04), rgba(129,140,248,0.04));
+      border: 1px solid var(--border);
+      border-radius: var(--rad);
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .resume-icon-wrap {
+      width: 72px; height: 72px;
+      background: var(--cyan-dim);
+      border: 1px solid var(--border-h);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .resume-info h3 {
+      font-family: var(--ff-head);
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .resume-info p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+
+    /* ─────────────────────────────────────
+       CONTACT
+    ───────────────────────────────────── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .contact-left h3 {
+      font-family: var(--ff-head);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .contact-left p {
+      font-size: 0.95rem;
+      color: var(--subtle);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .citem {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      margin-bottom: 12px;
+    }
+
+    .citem-icon {
+      width: 40px; height: 40px;
+      background: var(--cyan-dim);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      transition: all 0.25s;
+    }
+
+    .citem:hover .citem-icon { border-color: var(--border-h); background: rgba(56,189,248,0.16); }
+
+    .citem-lbl {
+      font-family: var(--ff-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .citem-val {
+      font-size: 0.88rem;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .citem:hover .citem-val { color: var(--cyan); }
+
+    .hire-box {
+      background: linear-gradient(135deg, rgba(56,189,248,0.05), rgba(129,140,248,0.04));
+      border: 1px solid var(--border);
+      border-radius: var(--rad);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 14px;
+    }
+
+    .hire-emoji { font-size: 2.8rem; }
+
+    .hire-box h3 {
+      font-family: var(--ff-head);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .hire-box p {
+      font-size: 0.9rem;
+      color: var(--subtle);
+      line-height: 1.7;
+      max-width: 300px;
+    }
+
+    /* ─────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 40px 32px;
+      text-align: center;
+      background: rgba(7,13,26,0.6);
+    }
+
+    .footer-name {
+      font-family: var(--ff-mono);
+      font-size: 0.8rem;
+      color: var(--cyan);
+      letter-spacing: 0.18em;
+      margin-bottom: 7px;
+    }
+
+    .footer-copy {
+      font-size: 0.76rem;
+      color: var(--muted);
+      font-family: var(--ff-mono);
+    }
+
+    /* ─────────────────────────────────────
+       ANIMATIONS
+    ───────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* HERO entrance */
+    .hero-content > * {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: heroIn 0.6s ease forwards;
+    }
+
+    .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+    .hero-content > *:nth-child(3) { animation-delay: 0.28s; }
+    .hero-content > *:nth-child(4) { animation-delay: 0.36s; }
+    .hero-content > *:nth-child(5) { animation-delay: 0.44s; }
+    .hero-content > *:nth-child(6) { animation-delay: 0.52s; }
+    .hero-content > *:nth-child(7) { animation-delay: 0.60s; }
+
+    .photo-wrap {
+      opacity: 0;
+      animation: fadeUp 0.7s 0.35s ease forwards;
+    }
+
+    @keyframes heroIn {
+      to { opacity: 1; transform: none; }
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; }
+    }
+
+    /* ─────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .photo-wrap { order: -1; justify-content: center; }
+      .photo-ring-outer { width: 220px; height: 220px; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero-eyebrow, .hero-links { justify-content: center; }
+      .btn-row { justify-content: center; }
+      .hero-desc { margin-left: auto; margin-right: auto; }
+      .nav-links { display: none; }
+      .stats-inner { flex-wrap: wrap; }
+      .stat-cell { min-width: 50%; border-top: 1px solid var(--border); }
+    }
+
+    @media (max-width: 480px) {
+      .wrap { padding: 0 18px; }
+      .edu-card { grid-template-columns: 40px 1fr; }
+      .edu-score-wrap { grid-column: 1 / -1; text-align: left; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo">AS<span class="nav-logo-dot">.</span></a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Certs</a></li>
-        <li><a href="#contact" class="nav-cta">Hire Me</a></li>
-      </ul>
-    </div>
-  </nav>
+<!-- ═══ BACKGROUND LAYERS ═══ -->
+<div class="bg-layer bg-noise"></div>
+<div class="bg-layer bg-grid"></div>
+<div class="bg-layer bg-orbs"></div>
+<div class="bg-layer bg-scan"></div>
+<div class="particles" id="particles"></div>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-bg">
-      <div class="hero-grid"></div>
-      <div class="hero-orb hero-orb-1"></div>
-      <div class="hero-orb hero-orb-2"></div>
-      <div class="hero-scanline"></div>
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <span class="nav-logo-bracket">[</span>asr<span class="nav-logo-bracket">]</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-pill">
+      <div class="nav-pill-dot"></div>
+      Open to Work
     </div>
-    <div class="container hero-inner">
+  </div>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section id="home">
+  <div class="wrap">
+    <div class="hero-grid">
+
       <div class="hero-content">
-        <div class="hero-badge reveal-up">
-          <span class="badge-dot"></span>
-          Open to SOC Analyst · L1 Roles
-        </div>
-        <h1 class="hero-name reveal-up delay-1">
-          Aditya<br/>Senapati R
+        <div class="hero-eyebrow">SOC Analyst · Security Analyst · AI Security Analyst</div>
+
+        <h1 class="hero-name">
+          <span class="name-solid">Aditya Senapati R</span>
         </h1>
-        <p class="hero-title reveal-up delay-2">
-          AI/ML Engineer &amp; Aspiring SOC Analyst
+
+        <p class="hero-role">
+          B.E. in <strong>Artificial Intelligence & Machine Learning</strong>
+          &nbsp;·&nbsp; AMC Engineering College (2022–2026)
         </p>
-        <p class="hero-sub reveal-up delay-3">
-          Building AI-driven security tools that detect threats, automate triage, and strengthen enterprise defenses. B.E. AI &amp; ML · AMC Engineering College, Bangalore.
+
+        <p class="hero-desc">
+          Cybersecurity-focused engineer specializing in SIEM monitoring, threat detection,
+          incident response & AI-driven security automation. Building next-gen SOC tools
+          that fuse ML with real-world attack intelligence.
         </p>
-        <div class="hero-contacts reveal-up delay-4">
-          <a href="mailto:adityasenapati25@gmail.com" class="contact-chip">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-            adityasenapati25@gmail.com
-          </a>
-          <a href="tel:+919620881655" class="contact-chip">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            +91 96208 81655
-          </a>
-          <a href="https://www.linkedin.com/in/aditya-senapati-r-62bb87309/" target="_blank" rel="noopener" class="contact-chip">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zm2-3a2 2 0 110-4 2 2 0 010 4z"/></svg>
-            LinkedIn
-          </a>
-          <a href="https://github.com/MyselfAddy" target="_blank" rel="noopener" class="contact-chip">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-            GitHub
-          </a>
+
+        <div class="term">
+          <div class="term-bar">
+            <div class="term-dot"></div>
+            <div class="term-dot"></div>
+            <div class="term-dot"></div>
+            <span class="term-title">aditya@soc-terminal — zsh</span>
+          </div>
+          <div class="term-line"><span class="t-ps">aditya@soc</span>:~$ <span class="t-cmd">whoami</span></div>
+          <div class="term-line"><span class="t-ok">→ AI Cybersecurity Intern @ Rooman Technologies</span></div>
+          <div class="term-line"><span class="t-ps">aditya@soc</span>:~$ <span class="t-cmd">skills --list</span></div>
+          <div class="term-line"><span class="t-inf">→ Splunk · MITRE ATT&CK · Python · ML · Threat Intel</span></div>
+          <div class="term-line"><span class="t-ps">aditya@soc</span>:~$ <span class="t-cmd">status</span></div>
+          <div class="term-line"><span class="t-ok">→ Seeking SOC Analyst L1 Role</span><span class="t-cursor"></span></div>
         </div>
-        <div class="hero-actions reveal-up delay-5">
-          <a href="Aditya_Senapati_Resume_L1.pdf" target="_blank" class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-            View Resume
+
+        <div class="btn-row">
+          <a href="Aditya_Senapati_Resume_L1.pdf" target="_blank" class="btn btn-fill">📄 View Resume</a>
+          <a href="Aditya_Senapati_Resume_L1.pdf" download class="btn btn-ghost">⬇ Download</a>
+          <a href="#contact" class="btn btn-ghost">✉ Hire Me</a>
+        </div>
+
+        <div class="hero-links">
+          <a href="mailto:adityasenapati25@gmail.com">
+            <div class="hl-icon">✉</div>adityasenapati25@gmail.com
           </a>
-          <a href="Aditya_Senapati_Resume_L1.pdf" download class="btn btn-outline">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download Resume
+          <a href="tel:+919620881655">
+            <div class="hl-icon">📞</div>+91 96208 81655
           </a>
-          <a href="#contact" class="btn btn-ghost">Let's Connect</a>
+          <a href="https://www.linkedin.com/in/aditya-senapati-r-62bb87309/" target="_blank">
+            <div class="hl-icon">🔗</div>LinkedIn
+          </a>
+          <a href="https://github.com/MyselfAddy" target="_blank">
+            <div class="hl-icon">🐙</div>GitHub
+          </a>
         </div>
       </div>
-      <div class="hero-image-wrap reveal-right delay-2">
-        <div class="hero-img-ring"></div>
-        <div class="hero-img-ring hero-img-ring-2"></div>
-        <div class="hero-img-container">
-          <img src="my_pic.png" alt="Aditya Senapati R" class="hero-img" loading="eager" />
-          <div class="hero-img-overlay"></div>
+
+      <div class="photo-wrap">
+        <div class="photo-ring-outer">
+          <div class="photo-inner">
+            <div class="photo-placeholder">👤</div>
+            <img src="my_pic.png" alt="Aditya Senapati R"
+              onerror="this.style.display='none'" />
+          </div>
         </div>
-        <div class="hero-img-badge hero-img-badge-1">
-          <span class="badge-icon">🛡️</span>
-          <span>SOC Ready</span>
+        <div class="photo-badge">📍 Bangalore, India</div>
+
+        <!-- decorative SVG -->
+        <svg class="photo-decor" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="40" width="30" height="1" fill="#38bdf8"/>
+          <rect x="30" y="0" width="1" height="40" fill="#38bdf8"/>
+          <circle cx="30" cy="40" r="3" fill="#38bdf8"/>
+          <circle cx="70" cy="40" r="2" fill="#2dd4bf" opacity="0.6"/>
+        </svg>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ STATS ═══════════════ -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-cell reveal">
+      <span class="stat-n">4+</span>
+      <span class="stat-l">Projects</span>
+    </div>
+    <div class="stat-cell reveal">
+      <span class="stat-n">10+</span>
+      <span class="stat-l">Certifications</span>
+    </div>
+    <div class="stat-cell reveal">
+      <span class="stat-n">99.86%</span>
+      <span class="stat-l">IDS F1-Score</span>
+    </div>
+    <div class="stat-cell reveal">
+      <span class="stat-n">2.5M+</span>
+      <span class="stat-l">Records Analyzed</span>
+    </div>
+    <div class="stat-cell reveal">
+      <span class="stat-n">3</span>
+      <span class="stat-l">Live Deployments</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-tag reveal">// 01 — about me</div>
+    <h2 class="section-title reveal">Who I Am</h2>
+
+    <div class="about-grid">
+      <div class="about-prose reveal">
+        <p>
+          My name is <span class="hl">Aditya Senapati R</span>, pursuing B.E. in
+          Artificial Intelligence and Machine Learning at AMC Engineering College, Bangalore.
+          I have a deep passion for combining <span class="hl">AI with cybersecurity</span> to
+          build intelligent, proactive defense systems.
+        </p>
+        <p>
+          During my internship as an <span class="hl">AI Cybersecurity Intern at Rooman Technologies</span>,
+          I worked on log analysis, threat detection, insider threat modeling,
+          and integrating threat intelligence APIs into real SOC workflows.
+        </p>
+        <p>
+          I've built end-to-end platforms like <span class="hl2">VEILGuard</span> (insider threat detection)
+          and <span class="hl2">CybersDen</span> (SOC analyst toolkit), and trained an IDS model
+          achieving <span class="hl">99.86% F1-score</span> on 2.5M+ network records.
+        </p>
+        <p>
+          I'm particularly interested in <span class="hl">SOC Analyst (L1) roles</span> where
+          I can contribute to monitoring, investigation, and incident response while
+          continuously sharpening my skills in real-world security operations.
+        </p>
+      </div>
+
+      <div class="info-stack reveal">
+        <div class="info-row">
+          <div class="info-icon">🎓</div>
+          <div>
+            <div class="info-lbl">Education</div>
+            <div class="info-val">B.E. AI & ML — AMC Engineering College</div>
+          </div>
         </div>
-        <div class="hero-img-badge hero-img-badge-2">
-          <span class="badge-icon">⚡</span>
-          <span>AI-Powered</span>
+        <div class="info-row">
+          <div class="info-icon">💼</div>
+          <div>
+            <div class="info-lbl">Current Role</div>
+            <div class="info-val">AI Cybersecurity Intern · Rooman Technologies</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">📍</div>
+          <div>
+            <div class="info-lbl">Location</div>
+            <div class="info-val">Bangalore, Karnataka, India</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">🎯</div>
+          <div>
+            <div class="info-lbl">Goal</div>
+            <div class="info-val">Entry-Level SOC Analyst (L1) Role</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">🌐</div>
+          <div>
+            <div class="info-lbl">Languages</div>
+            <div class="info-val">English · Hindi · Odia · Kannada</div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="hero-stats reveal-up delay-5">
-      <div class="container">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <span class="stat-num">4+</span>
-            <span class="stat-label">Live Security Projects</span>
+  </div>
+</section>
+
+<!-- ═══════════════ SKILLS ═══════════════ -->
+<section class="section" id="skills">
+  <div class="wrap">
+    <div class="section-tag reveal">// 02 — technical skills</div>
+    <h2 class="section-title reveal">Skill Arsenal</h2>
+
+    <div class="skill-grid reveal">
+      <div class="skill-card">
+        <div class="sk-header">
+          <div class="sk-icon">🛡️</div>
+          <div class="sk-title">Security & SOC</div>
+        </div>
+        <div class="tag-cloud">
+          <span class="tag tag-c">Splunk SIEM</span>
+          <span class="tag tag-c">SIEM Monitoring</span>
+          <span class="tag tag-c">Wireshark</span>
+          <span class="tag tag-c">Incident Response</span>
+          <span class="tag tag-c">Log Correlation</span>
+          <span class="tag tag-c">Threat Detection</span>
+          <span class="tag tag-c">Alert Triage</span>
+          <span class="tag tag-c">Playbooks</span>
+          <span class="tag tag-c">MITRE ATT&CK</span>
+          <span class="tag tag-c">Threat Intelligence</span>
+          <span class="tag tag-c">UEBA</span>
+          <span class="tag tag-c">Insider Threat Detection</span>
+          <span class="tag tag-c">SOC Operations</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="sk-header">
+          <div class="sk-icon">🤖</div>
+          <div class="sk-title">AI/ML for Security</div>
+        </div>
+        <div class="tag-cloud">
+          <span class="tag tag-t">Intrusion Detection</span>
+          <span class="tag tag-t">Anomaly Detection</span>
+          <span class="tag tag-t">Scikit-learn</span>
+          <span class="tag tag-t">Isolation Forest</span>
+          <span class="tag tag-t">Behavioral Analytics</span>
+          <span class="tag tag-t">Risk Scoring</span>
+          <span class="tag tag-t">Rule-Based Detection</span>
+          <span class="tag tag-t">Random Forest</span>
+          <span class="tag tag-t">SMOTE</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="sk-header">
+          <div class="sk-icon">💻</div>
+          <div class="sk-title">Programming & Tools</div>
+        </div>
+        <div class="tag-cloud">
+          <span class="tag tag-v">Python</span>
+          <span class="tag tag-v">SQL</span>
+          <span class="tag tag-v">Streamlit</span>
+          <span class="tag tag-v">Git / GitHub</span>
+          <span class="tag tag-v">Linux</span>
+          <span class="tag tag-v">VS Code</span>
+          <span class="tag tag-v">Google Colab</span>
+          <span class="tag tag-v">Pandas</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="sk-header">
+          <div class="sk-icon">🔌</div>
+          <div class="sk-title">APIs & Platforms</div>
+        </div>
+        <div class="tag-cloud">
+          <span class="tag tag-a">VirusTotal API</span>
+          <span class="tag tag-a">AbuseIPDB API</span>
+          <span class="tag tag-a">IPInfo API</span>
+          <span class="tag tag-a">Groq LLM</span>
+          <span class="tag tag-a">Active Directory</span>
+          <span class="tag tag-a">Azure Entra ID</span>
+          <span class="tag tag-a">TCP/IP</span>
+          <span class="tag tag-a">Network Protocols</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ EXPERIENCE ═══════════════ -->
+<section class="section" id="experience">
+  <div class="wrap">
+    <div class="section-tag reveal">// 03 — work experience</div>
+    <h2 class="section-title reveal">Experience</h2>
+
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="exp-card">
+          <div class="exp-head">
+            <div class="exp-company">Rooman Technologies</div>
+            <div class="exp-badge">Current · Remote</div>
           </div>
-          <div class="stat-sep"></div>
-          <div class="stat-item">
-            <span class="stat-num">10+</span>
-            <span class="stat-label">Certifications</span>
-          </div>
-          <div class="stat-sep"></div>
-          <div class="stat-item">
-            <span class="stat-num">2.5M+</span>
-            <span class="stat-label">Records Analyzed (IDS)</span>
-          </div>
-          <div class="stat-sep"></div>
-          <div class="stat-item">
-            <span class="stat-num">99.86%</span>
-            <span class="stat-label">Model F1-Score</span>
+          <div class="exp-role">AI Cybersecurity Intern</div>
+          <div class="exp-date">February 2026 – Present</div>
+          <p class="exp-p">
+            Built AI-driven cybersecurity solutions focused on threat detection, log analysis,
+            and SOC workflow simulation. Gained hands-on experience analyzing real-world
+            security data and building practical tools for identifying and investigating cyber threats.
+          </p>
+          <ul class="exp-list">
+            <li>Built AI-driven SOC solutions for insider threat detection, anomaly detection, phishing analysis, and incident response using Python, ML, and Streamlit dashboards.</li>
+            <li>Automated log parsing, alert triage, IOC enrichment, and threat intelligence workflows using VirusTotal, AbuseIPDB, and MITRE ATT&CK mapping.</li>
+            <li>Analyzed security logs, user activity, and network events to detect suspicious behavior, privilege misuse, and attack patterns in SOC environments.</li>
+            <li>Developed real-time monitoring dashboards for alert management, risk scoring, threat investigation, and security reporting for SOC analyst workflows.</li>
+            <li>Worked on cybersecurity datasets for intrusion detection, behavioral analytics, and AI-powered threat investigation aligned with SIEM operations.</li>
+            <li>Designed end-to-end incident investigation workflows with automated report generation.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag tag-c">Python</span>
+            <span class="tag tag-c">Streamlit</span>
+            <span class="tag tag-t">Machine Learning</span>
+            <span class="tag tag-a">Threat Intel APIs</span>
+            <span class="tag tag-v">MITRE ATT&CK</span>
+            <span class="tag tag-c">Splunk Concepts</span>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <main>
+<!-- ═══════════════ PROJECTS ═══════════════ -->
+<section class="section" id="projects">
+  <div class="wrap">
+    <div class="section-tag reveal">// 04 — projects</div>
+    <h2 class="section-title reveal">Projects</h2>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section-label reveal-up">About Me</div>
-        <div class="about-grid">
-          <div class="about-text reveal-up delay-1">
-            <h2 class="section-title">Turning raw log data<br/>into actionable intelligence.</h2>
-            <p>I'm Aditya Senapati R — an AI/ML engineering student with a deliberate focus on cybersecurity and security operations. I don't just study threats; I build tools to detect them.</p>
-            <p>Currently interning as an <strong>AI Cybersecurity Intern at Rooman Technologies</strong>, I've shipped production-ready platforms like VEILGuard (insider threat detection) and CybersDen (SOC analyst toolkit) — both live on Streamlit Cloud. My work sits at the exact intersection of Machine Learning and Security Operations that modern SOC teams need.</p>
-            <p>I'm seeking <strong>SOC Analyst L1</strong>, <strong>Security Analyst</strong>, and <strong>Cybersecurity Intern</strong> roles where I can contribute to real-world threat detection and response.</p>
-            <div class="about-highlights">
-              <div class="highlight-chip">📍 Bangalore, Karnataka</div>
-              <div class="highlight-chip">🎓 B.E. AI & ML · 2026</div>
-              <div class="highlight-chip">🔒 SOC Analyst Focused</div>
-              <div class="highlight-chip">🤝 Open to Opportunities</div>
-            </div>
+    <div class="proj-cat-label reveal">🛡️ Cybersecurity</div>
+
+    <div class="proj-grid reveal">
+
+      <!-- VEILGuard -->
+      <div class="proj-card featured">
+        <div class="proj-top">
+          <div class="proj-icon">🛡️</div>
+          <div class="proj-badges">
+            <span class="pbadge pb-intern">Internship</span>
+            <span class="pbadge pb-live">Live</span>
           </div>
-          <div class="about-sidebar reveal-right delay-2">
-            <div class="expertise-card">
-              <h3>Core Expertise</h3>
-              <ul class="expertise-list">
-                <li>
-                  <span class="exp-icon">🎯</span>
-                  <div>
-                    <strong>SIEM & Log Analysis</strong>
-                    <p>Splunk dashboards, SPL queries, log correlation, brute-force detection</p>
-                  </div>
-                </li>
-                <li>
-                  <span class="exp-icon">🧠</span>
-                  <div>
-                    <strong>AI-Driven Threat Detection</strong>
-                    <p>Isolation Forest, Random Forest, UEBA, anomaly detection pipelines</p>
-                  </div>
-                </li>
-                <li>
-                  <span class="exp-icon">🔍</span>
-                  <div>
-                    <strong>IOC Analysis & Enrichment</strong>
-                    <p>VirusTotal, AbuseIPDB, MITRE ATT&CK mapping, threat intel workflows</p>
-                  </div>
-                </li>
-                <li>
-                  <span class="exp-icon">⚡</span>
-                  <div>
-                    <strong>Incident Response Automation</strong>
-                    <p>Alert triage, playbooks, AI-generated SOC reports, risk scoring</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
+        </div>
+        <div class="proj-name">VEILGuard — Vigilant Enterprise Insider Leakage Guard</div>
+        <p class="proj-desc">
+          Enterprise-grade cybersecurity platform to detect, analyze, and simulate insider threats
+          in real time using ML, UEBA, Rule-Based Detection, and AI-generated SOC analyst reports.
+        </p>
+        <ul class="proj-feats">
+          <li>Insider threat detection using UEBA, Isolation Forest & rule-based detection</li>
+          <li>Risk scoring, MITRE ATT&CK mapping & real-time alert generation</li>
+          <li>What-If Attack Simulator — models insider attack chains & business impact</li>
+          <li>Groq LLM integration for AI-powered SOC reports & remediation advice</li>
+          <li>Streamlit dashboard for user behavior profiling & high-risk entity investigation</li>
+        </ul>
+        <div class="proj-tech">
+          <span class="tech-chip">Python</span>
+          <span class="tech-chip">Streamlit</span>
+          <span class="tech-chip">UEBA</span>
+          <span class="tech-chip">Isolation Forest</span>
+          <span class="tech-chip">MITRE ATT&CK</span>
+          <span class="tech-chip">Groq LLM</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://veilguard.streamlit.app/" target="_blank" class="plink plink-demo">▶ Live Demo</a>
+          <a href="https://github.com/MyselfAddy/VEILGuard" target="_blank" class="plink plink-code">⌥ View Code</a>
         </div>
       </div>
-    </section>
 
-    <!-- SKILLS -->
-    <section class="section section-alt" id="skills">
-      <div class="container">
-        <div class="section-label reveal-up">Technical Arsenal</div>
-        <h2 class="section-title centered reveal-up delay-1">Skills &amp; Tools</h2>
-        <div class="skills-layout">
-          <div class="skill-category reveal-up delay-1">
-            <div class="skill-cat-header">
-              <span class="skill-cat-icon">🛡️</span>
-              <h3>Security &amp; SOC</h3>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag skill-tag-primary">Splunk SIEM</span>
-              <span class="skill-tag skill-tag-primary">MITRE ATT&CK</span>
-              <span class="skill-tag skill-tag-primary">Incident Response</span>
-              <span class="skill-tag skill-tag-primary">Threat Detection</span>
-              <span class="skill-tag">Alert Triage</span>
-              <span class="skill-tag">Log Correlation</span>
-              <span class="skill-tag">Wireshark</span>
-              <span class="skill-tag">IOC Analysis</span>
-              <span class="skill-tag">UEBA</span>
-              <span class="skill-tag">Insider Threat Detection</span>
-              <span class="skill-tag">Threat Intelligence</span>
-              <span class="skill-tag">SOC Playbooks</span>
-              <span class="skill-tag">Network Traffic Monitoring</span>
-            </div>
+      <!-- CybersDen -->
+      <div class="proj-card">
+        <div class="proj-top">
+          <div class="proj-icon">🔐</div>
+          <div class="proj-badges">
+            <span class="pbadge pb-live">Live</span>
           </div>
-          <div class="skill-category reveal-up delay-2">
-            <div class="skill-cat-header">
-              <span class="skill-cat-icon">🤖</span>
-              <h3>AI/ML for Security</h3>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag skill-tag-primary">Intrusion Detection</span>
-              <span class="skill-tag skill-tag-primary">Anomaly Detection</span>
-              <span class="skill-tag skill-tag-primary">Isolation Forest</span>
-              <span class="skill-tag">Random Forest</span>
-              <span class="skill-tag">Behavioral Analytics</span>
-              <span class="skill-tag">Risk Scoring</span>
-              <span class="skill-tag">Scikit-learn</span>
-              <span class="skill-tag">Rule-Based Detection</span>
-              <span class="skill-tag">SMOTE / Imbalance Handling</span>
-            </div>
-          </div>
-          <div class="skill-category reveal-up delay-3">
-            <div class="skill-cat-header">
-              <span class="skill-cat-icon">💻</span>
-              <h3>Programming &amp; Platforms</h3>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag skill-tag-primary">Python</span>
-              <span class="skill-tag skill-tag-primary">Streamlit</span>
-              <span class="skill-tag">SQL</span>
-              <span class="skill-tag">Git / GitHub</span>
-              <span class="skill-tag">Linux</span>
-              <span class="skill-tag">VS Code</span>
-              <span class="skill-tag">Google Colab</span>
-              <span class="skill-tag">Active Directory</span>
-              <span class="skill-tag">Azure Entra ID</span>
-            </div>
-          </div>
-          <div class="skill-category reveal-up delay-4">
-            <div class="skill-cat-header">
-              <span class="skill-cat-icon">🔌</span>
-              <h3>APIs &amp; Integrations</h3>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag skill-tag-primary">VirusTotal API</span>
-              <span class="skill-tag skill-tag-primary">AbuseIPDB API</span>
-              <span class="skill-tag">IPInfo API</span>
-              <span class="skill-tag">Groq LLM</span>
-              <span class="skill-tag">TCP/IP · Ports · Protocols</span>
-            </div>
-          </div>
+        </div>
+        <div class="proj-name">CybersDen — SOC Analyst Toolkit</div>
+        <p class="proj-desc">
+          Unified SOC platform integrating multiple security tools into one dashboard for
+          efficient threat investigation, reducing analyst effort and improving triage speed.
+        </p>
+        <ul class="proj-feats">
+          <li>IOC enrichment via VirusTotal, AbuseIPDB, IPInfo APIs</li>
+          <li>Log & network traffic analysis with anomaly detection</li>
+          <li>AI-based phishing detection & classification</li>
+          <li>Automated incident report generation using LLMs</li>
+          <li>MITRE ATT&CK mapping for threat classification</li>
+        </ul>
+        <div class="proj-tech">
+          <span class="tech-chip">Python</span>
+          <span class="tech-chip">Streamlit</span>
+          <span class="tech-chip">VirusTotal API</span>
+          <span class="tech-chip">AbuseIPDB</span>
+          <span class="tech-chip">SIEM Concepts</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://cybersden.streamlit.app/" target="_blank" class="plink plink-demo">▶ Live Demo</a>
+          <a href="https://github.com/MyselfAddy/CybersDen" target="_blank" class="plink plink-code">⌥ View Code</a>
         </div>
       </div>
-    </section>
 
-    <!-- EXPERIENCE -->
-    <section class="section" id="experience">
-      <div class="container">
-        <div class="section-label reveal-up">Career</div>
-        <h2 class="section-title reveal-up delay-1">Experience</h2>
-        <div class="timeline">
-          <div class="timeline-item reveal-up delay-1">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-meta">
-                <span class="timeline-date">Feb 2026 – Present</span>
-                <span class="timeline-badge timeline-badge-active">Active</span>
-              </div>
-              <h3 class="timeline-role">AI Cybersecurity Intern</h3>
-              <p class="timeline-company">Rooman Technologies &nbsp;·&nbsp; Remote, Bangalore</p>
-              <p class="timeline-desc">Led development of AI-driven SOC platforms, building end-to-end tools from threat detection to automated incident reporting — simulating real enterprise security operations.</p>
-              <ul class="timeline-bullets">
-                <li>Built AI-driven SOC solutions for insider threat detection, anomaly detection, phishing analysis, and incident response using Python, ML, and Streamlit dashboards</li>
-                <li>Automated log parsing, alert triage, IOC enrichment, and threat intelligence workflows using VirusTotal, AbuseIPDB, and MITRE ATT&CK mapping</li>
-                <li>Analyzed security logs, user activity, and network events to detect suspicious behavior, privilege misuse, and attack patterns in SOC environments</li>
-                <li>Developed real-time monitoring dashboards for alert management, risk scoring, threat investigation, and security reporting for SOC analyst workflows</li>
-                <li>Worked on cybersecurity datasets for intrusion detection, behavioral analytics, and AI-powered threat investigation aligned with SIEM operations</li>
-                <li>Designed end-to-end incident investigation workflows with automated report generation</li>
-              </ul>
-              <div class="timeline-tech">
-                <span>Python</span><span>Streamlit</span><span>Splunk Concepts</span><span>Threat Intel APIs</span><span>Machine Learning</span>
-              </div>
-            </div>
+      <!-- Splunk -->
+      <div class="proj-card">
+        <div class="proj-top">
+          <div class="proj-icon">📊</div>
+          <div class="proj-badges">
+            <span class="pbadge pb-boot">Bootcamp</span>
           </div>
+        </div>
+        <div class="proj-name">Splunk-Based Login Activity & Security Analysis</div>
+        <p class="proj-desc">
+          Authentication log analysis using Splunk to detect anomalies, identify attack patterns,
+          and generate actionable security insights via SPL queries and dashboards.
+        </p>
+        <ul class="proj-feats">
+          <li>Analyzed ~500 authentication events over 7 days</li>
+          <li>SPL queries for login success/failure, IP tracking & time trends</li>
+          <li>Interactive dashboards for security monitoring</li>
+          <li>Detected targeted attacks on privileged accounts</li>
+          <li>Identified internal threat patterns and abnormal login behavior</li>
+        </ul>
+        <div class="proj-tech">
+          <span class="tech-chip">Splunk Enterprise</span>
+          <span class="tech-chip">SPL</span>
+          <span class="tech-chip">Log Analysis</span>
+          <span class="tech-chip">SIEM</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/MyselfAddy/splunk-login-analysis" target="_blank" class="plink plink-demo">📋 View Report</a>
         </div>
       </div>
-    </section>
 
-    <!-- PROJECTS -->
-    <section class="section section-alt" id="projects">
-      <div class="container">
-        <div class="section-label reveal-up">Work</div>
-        <h2 class="section-title reveal-up delay-1">Featured Projects</h2>
-
-        <div class="project-category-label reveal-up delay-2">
-          <span class="pcat-line"></span>
-          <span>Cybersecurity &amp; SOC</span>
-          <span class="pcat-line"></span>
-        </div>
-
-        <!-- VEILGUARD - FEATURED -->
-        <div class="project-featured reveal-up delay-2">
-          <div class="project-featured-badge">Internship Flagship Project</div>
-          <div class="project-featured-inner">
-            <div class="project-featured-content">
-              <div class="project-number">01</div>
-              <h3 class="project-title">
-                VEILGuard
-                <span class="project-subtitle">Vigilant Enterprise Insider Leakage Guard</span>
-              </h3>
-              <p class="project-desc">An enterprise-grade cybersecurity platform that detects, analyzes, and simulates insider threats in real time using Machine Learning, UEBA, rule-based detection, and AI-generated SOC analyst reports — complete with a What-If Attack Simulator.</p>
-              <ul class="project-bullets">
-                <li>Insider threat detection via UEBA, Isolation Forest, and rule-based anomaly flagging</li>
-                <li>Risk scoring engine + MITRE ATT&CK mapping for every detected threat</li>
-                <li>What-If Attack Simulator to model insider attack chains and estimate business impact</li>
-                <li>Groq LLM integration for AI-powered SOC reports, remediation recommendations, and incident docs</li>
-                <li>Streamlit dashboard for user behavior profiling, alert monitoring, and high-risk entity investigation</li>
-              </ul>
-              <div class="project-tech-row">
-                <span>Python</span><span>Streamlit</span><span>Isolation Forest</span><span>UEBA</span><span>MITRE ATT&CK</span><span>Groq LLM</span>
-              </div>
-              <div class="project-links">
-                <a href="https://veilguard.streamlit.app/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  Live Demo
-                </a>
-                <a href="https://github.com/MyselfAddy/VEILGuard" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-                  View Code
-                </a>
-              </div>
-            </div>
-            <div class="project-featured-visual">
-              <div class="pf-visual-inner">
-                <div class="pf-terminal">
-                  <div class="pf-terminal-bar">
-                    <span class="t-dot t-red"></span>
-                    <span class="t-dot t-yellow"></span>
-                    <span class="t-dot t-green"></span>
-                    <span class="t-title">VEILGuard · Threat Monitor</span>
-                  </div>
-                  <div class="pf-terminal-body">
-                    <div class="t-line t-alert"><span class="t-tag t-crit">CRITICAL</span> User:jsmith — Data exfiltration detected</div>
-                    <div class="t-line t-warn"><span class="t-tag t-warn-tag">HIGH</span> User:admin — Off-hours login · 3:47 AM</div>
-                    <div class="t-line"><span class="t-tag t-med">MED</span> User:rjones — Privilege escalation attempt</div>
-                    <div class="t-line t-muted">Running MITRE ATT&amp;CK mapping…</div>
-                    <div class="t-line t-ok"><span class="t-tag t-ok-tag">MAPPED</span> T1078 · Valid Accounts · TA0001</div>
-                    <div class="t-line t-muted">Generating SOC analyst report via Groq LLM…</div>
-                    <div class="t-line t-ok">Report ready → incident_2026_04_27.pdf</div>
-                    <div class="t-cursor"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <!-- IDS -->
+      <div class="proj-card">
+        <div class="proj-top">
+          <div class="proj-icon">🔬</div>
+          <div class="proj-badges">
+            <span class="pbadge pb-major">Major Project</span>
           </div>
         </div>
-
-        <!-- PROJECTS GRID -->
-        <div class="projects-grid">
-
-          <!-- CybersDen -->
-          <div class="project-card reveal-up delay-1">
-            <div class="project-card-header">
-              <span class="project-num-sm">02</span>
-              <div class="project-card-links">
-                <a href="https://cybersden.streamlit.app/" target="_blank" rel="noopener" title="Live Demo">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-                <a href="https://github.com/MyselfAddy/CybersDen" target="_blank" rel="noopener" title="GitHub">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-                </a>
-              </div>
-            </div>
-            <h3>CybersDen<span class="card-cat">SOC Analyst Toolkit</span></h3>
-            <p>Unified SOC dashboard integrating IOC validation, phishing detection, log analysis, threat intelligence enrichment, and AI-powered incident reporting in one platform.</p>
-            <ul>
-              <li>VirusTotal, AbuseIPDB, IPInfo for automated IOC enrichment</li>
-              <li>AI-powered phishing analysis + MITRE ATT&CK mapping</li>
-              <li>Anomaly detection for brute-force, port scanning, suspicious logins</li>
-              <li>Case management, alert triage, PDF reporting</li>
-            </ul>
-            <div class="card-tech">
-              <span>Python</span><span>Streamlit</span><span>VirusTotal API</span><span>LLMs</span>
-            </div>
-            <div class="card-actions">
-              <a href="https://cybersden.streamlit.app/" target="_blank" class="btn btn-primary btn-sm">Live Demo</a>
-              <a href="https://github.com/MyselfAddy/CybersDen" target="_blank" class="btn btn-outline btn-sm">View Code</a>
-            </div>
-          </div>
-
-          <!-- Splunk -->
-          <div class="project-card reveal-up delay-2">
-            <div class="project-card-header">
-              <span class="project-num-sm">03</span>
-              <div class="project-card-links">
-                <a href="https://github.com/MyselfAddy/splunk-login-analysis" target="_blank" rel="noopener" title="GitHub">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-                </a>
-              </div>
-            </div>
-            <h3>Splunk Login Analysis<span class="card-cat">SIEM Investigation</span></h3>
-            <p>Authentication log analysis using Splunk to detect anomalies, identify targeted attacks, and generate actionable security insights via SPL queries and interactive dashboards.</p>
-            <ul>
-              <li>Analyzed ~500 authentication events over 7 days</li>
-              <li>SPL queries for login trends, IP tracking, failure patterns</li>
-              <li>Detected targeted attacks on privileged accounts</li>
-              <li>Identified internal threat patterns and abnormal behavior</li>
-            </ul>
-            <div class="card-tech">
-              <span>Splunk Enterprise</span><span>SPL</span><span>Log Analysis</span>
-            </div>
-            <div class="card-actions">
-              <a href="https://github.com/MyselfAddy/splunk-login-analysis" target="_blank" class="btn btn-outline btn-sm">View Report</a>
-            </div>
-          </div>
-
-          <!-- IDS - Major Project -->
-          <div class="project-card project-card-highlight reveal-up delay-3">
-            <div class="project-card-header">
-              <span class="project-num-sm">04</span>
-              <span class="card-status-badge">Under Publishing</span>
-            </div>
-            <h3>Intelligent Network IDS<span class="card-cat">Major Project</span></h3>
-            <p>Multi-class Intrusion Detection System trained on 2.5M+ real network traffic records from the CICIDS-2017 dataset, achieving near-perfect detection accuracy across multiple attack types.</p>
-            <ul>
-              <li>CICIDS-2017 dataset · 2.5M+ records · SMOTE balanced to ~1M</li>
-              <li>Random Forest, AdaBoost, Extra Trees ensemble models</li>
-              <li>99.86% F1-score — near-perfect multi-class classification</li>
-              <li>Full ML pipeline: preprocessing → feature engineering → evaluation</li>
-            </ul>
-            <div class="card-tech">
-              <span>Python</span><span>Scikit-learn</span><span>Pandas</span><span>Random Forest</span>
-            </div>
-            <p class="card-note">📖 Detailed documentation and repository coming soon.</p>
-          </div>
-
+        <div class="proj-name">Intelligent Network Intrusion Detection & Analytics System</div>
+        <p class="proj-desc">
+          ML-based IDS trained on large-scale network traffic data to classify multiple
+          attack types with near-perfect accuracy. Under publishing phase.
+        </p>
+        <ul class="proj-feats">
+          <li>Dataset: CICIDS2017 (~2.5M records)</li>
+          <li>Balanced dataset using SMOTE (~1M records)</li>
+          <li>Models: Random Forest, AdaBoost, Extra Trees</li>
+          <li>Achieved <strong style="color:var(--cyan)">99.86% F1-score</strong> in tree-based models</li>
+          <li>Full ML pipeline — cleaning, feature engineering, evaluation</li>
+        </ul>
+        <div class="proj-tech">
+          <span class="tech-chip">Python</span>
+          <span class="tech-chip">Scikit-learn</span>
+          <span class="tech-chip">Pandas</span>
+          <span class="tech-chip">SMOTE</span>
+          <span class="tech-chip">Random Forest</span>
         </div>
+        <div class="proj-wip">⚠️ Under publishing — repository & documentation coming soon.</div>
+      </div>
 
-        <div class="project-category-label reveal-up" style="margin-top:3rem;">
-          <span class="pcat-line"></span>
-          <span>AI &amp; Machine Learning</span>
-          <span class="pcat-line"></span>
+    </div>
+
+    <div class="proj-cat-label reveal">🤖 AI & Machine Learning</div>
+
+    <div class="proj-grid reveal">
+
+      <!-- ProjectForgeAI -->
+      <div class="proj-card">
+        <div class="proj-top">
+          <div class="proj-icon">🧠</div>
+          <div class="proj-badges">
+            <span class="pbadge pb-live">Live</span>
+          </div>
         </div>
-
-        <div class="projects-grid">
-
-          <!-- ProjectForgeAI -->
-          <div class="project-card reveal-up delay-1">
-            <div class="project-card-header">
-              <span class="project-num-sm">05</span>
-              <div class="project-card-links">
-                <a href="https://projectforgeai.streamlit.app/" target="_blank" rel="noopener" title="Live Demo">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-                <a href="https://github.com/MyselfAddy/ProjectForgeAI" target="_blank" rel="noopener" title="GitHub">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-                </a>
-              </div>
-            </div>
-            <h3>ProjectForgeAI<span class="card-cat">AI · Idea Generator</span></h3>
-            <p>AI system that generates personalized, unique project ideas using multi-domain fusion of Artificial Intelligence, Cybersecurity, and Computer Vision — tailored by user weights and skill level.</p>
-            <ul>
-              <li>Multi-domain fusion: AI + Cybersecurity + CV</li>
-              <li>Custom weight-based idea generation algorithm</li>
-              <li>Groq LLM for intelligent, context-aware synthesis</li>
-            </ul>
-            <div class="card-tech">
-              <span>Python</span><span>Streamlit</span><span>Groq API</span>
-            </div>
-            <div class="card-actions">
-              <a href="https://projectforgeai.streamlit.app/" target="_blank" class="btn btn-primary btn-sm">Live Demo</a>
-              <a href="https://github.com/MyselfAddy/ProjectForgeAI" target="_blank" class="btn btn-outline btn-sm">View Code</a>
-            </div>
-          </div>
-
-          <!-- Customer Churn -->
-          <div class="project-card reveal-up delay-2">
-            <div class="project-card-header">
-              <span class="project-num-sm">06</span>
-              <div class="project-card-links">
-                <a href="https://github.com/MyselfAddy/Machine-Learning" target="_blank" rel="noopener" title="GitHub">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-                </a>
-              </div>
-            </div>
-            <h3>Customer Churn Prediction<span class="card-cat">ML · Predictive Analytics</span></h3>
-            <p>Machine learning system to predict telecom customer churn — enabling proactive retention strategies through data-driven insights and model interpretability.</p>
-            <ul>
-              <li>Logistic Regression, Random Forest, XGBoost ensemble</li>
-              <li>ROC-AUC ~0.82 — strong predictive performance</li>
-              <li>Key churn drivers: contract type and billing patterns</li>
-              <li>Full ML pipeline from raw data to evaluation</li>
-            </ul>
-            <div class="card-tech">
-              <span>Python</span><span>Scikit-learn</span><span>XGBoost</span><span>Pandas</span>
-            </div>
-            <div class="card-actions">
-              <a href="https://github.com/MyselfAddy/Machine-Learning" target="_blank" class="btn btn-outline btn-sm">View Code</a>
-            </div>
-          </div>
-
+        <div class="proj-name">ProjectForgeAI — AI-Powered Project Idea Generator</div>
+        <p class="proj-desc">
+          AI system that generates personalized, unique project ideas using multi-domain
+          fusion of Artificial Intelligence, Cybersecurity, and Computer Vision.
+        </p>
+        <ul class="proj-feats">
+          <li>Multi-domain fusion — AI + Cybersecurity + CV</li>
+          <li>Custom weight-based idea generation per user profile</li>
+          <li>Groq LLM for intelligent synthesis</li>
+          <li>Interactive Streamlit UI</li>
+        </ul>
+        <div class="proj-tech">
+          <span class="tech-chip">Python</span>
+          <span class="tech-chip">Streamlit</span>
+          <span class="tech-chip">Groq API</span>
+          <span class="tech-chip">LLM</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://projectforgeai.streamlit.app/" target="_blank" class="plink plink-demo">▶ Live Demo</a>
+          <a href="https://github.com/MyselfAddy/ProjectForgeAI" target="_blank" class="plink plink-code">⌥ View Code</a>
         </div>
       </div>
-    </section>
 
-    <!-- CERTIFICATIONS -->
-    <section class="section" id="certifications">
-      <div class="container">
-        <div class="section-label reveal-up">Credentials</div>
-        <h2 class="section-title reveal-up delay-1">Certifications</h2>
-        <div class="cert-grid">
-          <div class="cert-card reveal-up delay-1">
-            <div class="cert-issuer">Coursera</div>
-            <h3>Google Cybersecurity Professional Certificate</h3>
-            <p>Comprehensive program covering threat detection, incident response, network security, and security operations fundamentals.</p>
-          </div>
-          <div class="cert-card reveal-up delay-2">
-            <div class="cert-issuer">Cisco Networking Academy</div>
-            <h3>Cybersecurity Defence Analyst</h3>
-            <p>Defense-focused cybersecurity training covering threat analysis, network defense strategies, and SOC operations.</p>
-          </div>
-          <div class="cert-card reveal-up delay-3">
-            <div class="cert-issuer">Oracle Cloud · 2025</div>
-            <h3>OCI AI Foundations</h3>
-            <p>Oracle Cloud Infrastructure AI and machine learning foundations certification.</p>
-            <a href="certificates/eCertificate (2).pdf" target="_blank" class="cert-btn-link">View Certificate →</a>
-          </div>
-          <div class="cert-card reveal-up delay-1">
-            <div class="cert-issuer">Forage · TATA</div>
-            <h3>TATA Cybersecurity Analyst Simulation</h3>
-            <p>Virtual job simulation covering IAM, cybersecurity strategy, and real-world enterprise security challenges.</p>
-            <a href="certificates/Forage TATA cybersecurity Certificate.pdf" target="_blank" class="cert-btn-link">View Certificate →</a>
-          </div>
-          <div class="cert-card reveal-up delay-2">
-            <div class="cert-issuer">LetsDefend</div>
-            <h3>SOC Analyst Learning Path</h3>
-            <p>Hands-on SOC analyst training with real alert investigation, log analysis, and incident response on a live SIEM platform.</p>
-            <a href="certificates/SOC Analyst Learning Path — LetsDefend.png" target="_blank" class="cert-btn-link">View Certificate →</a>
-          </div>
-          <div class="cert-card reveal-up delay-3">
-            <div class="cert-issuer">Internshala</div>
-            <h3>Machine Learning</h3>
-            <p>Structured ML training covering supervised learning, model evaluation, and real-world dataset implementation.</p>
-            <a href="certificates/Machine Learning — Internshala Training.png" target="_blank" class="cert-btn-link">View Certificate →</a>
-          </div>
-          <div class="cert-card reveal-up delay-1">
-            <div class="cert-issuer">Scholverse Educare</div>
-            <h3>Machine Learning</h3>
-            <p>Additional ML certification covering core algorithms, model building, and data preprocessing techniques.</p>
-            <a href="certificates/Machine Learning — Scholverse Educare.png" target="_blank" class="cert-btn-link">View Certificate →</a>
-          </div>
-          <div class="cert-card reveal-up delay-2">
-            <div class="cert-issuer">Devtown · Google Developer Group</div>
-            <h3>Splunk Ignite Bootcamp</h3>
-            <p>Splunk SIEM fundamentals — dashboards, alerts, SPL queries, log analysis, and threat detection workflows.</p>
-            <a href="certificates/Splunk Ignite — Devtown , google.png" target="_blank" class="cert-btn-link">View Certificate →</a>
-          </div>
-          <div class="cert-card reveal-up delay-3">
-            <div class="cert-issuer">Devtown · Microsoft Student Chapter</div>
-            <h3>Splunk Ignite — Microsoft Edition</h3>
-            <p>Extended Splunk training through the Microsoft Student Chapter collaboration with Devtown.</p>
-            <a href="certificates/Splunk Ignite — Devtown, microsoft.png" target="_blank" class="cert-btn-link">View Certificate →</a>
-          </div>
-          <div class="cert-card reveal-up delay-1">
-            <div class="cert-issuer">Devtown</div>
-            <h3>Splunk Bootcamp Completion</h3>
-            <p>Full Splunk bootcamp completion certification — practical SIEM operations and security monitoring.</p>
-            <a href="certificates/Splunk Ignite — Devtown.png" target="_blank" class="cert-btn-link">View Certificate →</a>
-          </div>
+      <!-- Customer Churn -->
+      <div class="proj-card">
+        <div class="proj-top">
+          <div class="proj-icon">📉</div>
+          <div class="proj-badges"></div>
+        </div>
+        <div class="proj-name">Customer Churn Prediction System</div>
+        <p class="proj-desc">
+          ML system to predict telecom customer churn, enabling businesses to take proactive
+          retention actions using data-driven insights.
+        </p>
+        <ul class="proj-feats">
+          <li>Logistic Regression, Random Forest, XGBoost</li>
+          <li>ROC-AUC ~0.82</li>
+          <li>Identified key churn factors: contract type & billing patterns</li>
+          <li>Full ML pipeline from preprocessing to evaluation</li>
+        </ul>
+        <div class="proj-tech">
+          <span class="tech-chip">Python</span>
+          <span class="tech-chip">Scikit-learn</span>
+          <span class="tech-chip">XGBoost</span>
+          <span class="tech-chip">Pandas</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/MyselfAddy/Machine-Learning" target="_blank" class="plink plink-code">⌥ View Code</a>
         </div>
       </div>
-    </section>
 
-    <!-- EDUCATION -->
-    <section class="section section-alt" id="education">
-      <div class="container">
-        <div class="section-label reveal-up">Academic Background</div>
-        <h2 class="section-title reveal-up delay-1">Education</h2>
-        <div class="edu-grid">
-          <div class="edu-card edu-card-primary reveal-up delay-1">
-            <div class="edu-year">2022 – 2026</div>
-            <div class="edu-degree-wrap">
-              <div class="edu-icon">🎓</div>
-              <div>
-                <h3>B.E. in Artificial Intelligence &amp; Machine Learning</h3>
-                <p class="edu-institute">AMC Engineering College, Bangalore</p>
-                <p class="edu-affil">Affiliated to Visvesvaraya Technological University (VTU)</p>
-              </div>
-            </div>
-            <div class="edu-meta">
-              <span class="edu-score">CGPA: 7.43</span>
-              <span>18th KM Bannerghatta Road, Bengaluru, Karnataka</span>
-            </div>
-          </div>
-          <div class="edu-card reveal-up delay-2">
-            <div class="edu-year">2019 – 2021</div>
-            <div class="edu-degree-wrap">
-              <div class="edu-icon">📘</div>
-              <div>
-                <h3>12th Standard (PCMCs)</h3>
-                <p class="edu-institute">New Baldwin International PU College, Bangalore</p>
-              </div>
-            </div>
-            <div class="edu-meta">
-              <span class="edu-score">89.36%</span>
-            </div>
-          </div>
-          <div class="edu-card reveal-up delay-3">
-            <div class="edu-year">2018 – 2019</div>
-            <div class="edu-degree-wrap">
-              <div class="edu-icon">📗</div>
-              <div>
-                <h3>10th Standard</h3>
-                <p class="edu-institute">M.Tres High School, Bangalore</p>
-              </div>
-            </div>
-            <div class="edu-meta">
-              <span class="edu-score">88%</span>
-            </div>
-          </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ EDUCATION ═══════════════ -->
+<section class="section" id="education">
+  <div class="wrap">
+    <div class="section-tag reveal">// 05 — education</div>
+    <h2 class="section-title reveal">Education</h2>
+
+    <div class="edu-stack reveal">
+
+      <div class="edu-card">
+        <div class="edu-icon">🎓</div>
+        <div>
+          <div class="edu-deg">B.E. in Artificial Intelligence & Machine Learning</div>
+          <div class="edu-school">AMC Engineering College · Affiliated to VTU</div>
+          <div class="edu-loc">18th KM Bannerghatta Road, Bengaluru, Karnataka</div>
+        </div>
+        <div class="edu-score-wrap">
+          <span class="edu-score">7.43</span>
+          <span class="edu-score-lbl">CGPA</span>
+          <span class="edu-year">2022 – 2026</span>
         </div>
       </div>
-    </section>
 
-    <!-- RESUME -->
-    <section class="section resume-section" id="resume">
-      <div class="container">
-        <div class="resume-inner reveal-up">
-          <div class="resume-content">
-            <div class="section-label" style="color:var(--accent);">Resume</div>
-            <h2>Ready to contribute<br/>from day one.</h2>
-            <p>My resume details my hands-on experience with SIEM, threat detection tools, AI/ML security projects, and real-world SOC workflows. Available for immediate opportunities.</p>
-            <div class="resume-actions">
-              <a href="Aditya_Senapati_Resume_L1.pdf" target="_blank" class="btn btn-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
-                View Resume
-              </a>
-              <a href="Aditya_Senapati_Resume_L1.pdf" download class="btn btn-outline">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download Resume
-              </a>
-            </div>
-          </div>
-          <div class="resume-visual">
-            <div class="resume-doc-preview">
-              <div class="rdp-header">
-                <div class="rdp-dot"></div>
-                <div class="rdp-dot"></div>
-                <div class="rdp-dot"></div>
-              </div>
-              <div class="rdp-body">
-                <div class="rdp-name-line"></div>
-                <div class="rdp-sub-line"></div>
-                <div class="rdp-divider"></div>
-                <div class="rdp-section-label"></div>
-                <div class="rdp-text-line" style="width:95%"></div>
-                <div class="rdp-text-line" style="width:88%"></div>
-                <div class="rdp-text-line" style="width:92%"></div>
-                <div class="rdp-divider"></div>
-                <div class="rdp-section-label"></div>
-                <div class="rdp-text-line" style="width:80%"></div>
-                <div class="rdp-text-line" style="width:70%"></div>
-              </div>
-              <div class="rdp-glow"></div>
-            </div>
-          </div>
+      <div class="edu-card">
+        <div class="edu-icon">📚</div>
+        <div>
+          <div class="edu-deg">12th Standard — Science (PCMCs)</div>
+          <div class="edu-school">New Baldwin International Pre University College</div>
+          <div class="edu-loc">Bengaluru, Karnataka</div>
+        </div>
+        <div class="edu-score-wrap">
+          <span class="edu-score">89.36%</span>
+          <span class="edu-score-lbl">Percentage</span>
+          <span class="edu-year">2019 – 2021</span>
         </div>
       </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-label reveal-up">Get In Touch</div>
-        <h2 class="section-title centered reveal-up delay-1">Open to Opportunities</h2>
-        <p class="section-sub centered reveal-up delay-2">I'm actively seeking <strong>SOC Analyst L1</strong>, <strong>Cybersecurity Analyst</strong>, and <strong>Security Operations Intern</strong> roles. I respond quickly — let's talk.</p>
-        <div class="contact-grid reveal-up delay-3">
-          <a href="mailto:adityasenapati25@gmail.com" class="contact-card">
-            <div class="contact-card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-            </div>
-            <h4>Email</h4>
-            <p>adityasenapati25@gmail.com</p>
-            <span class="contact-card-cta">Send Email →</span>
-          </a>
-          <a href="https://www.linkedin.com/in/aditya-senapati-r-62bb87309/" target="_blank" rel="noopener" class="contact-card">
-            <div class="contact-card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zm2-3a2 2 0 110-4 2 2 0 010 4z"/></svg>
-            </div>
-            <h4>LinkedIn</h4>
-            <p>aditya-senapati-r</p>
-            <span class="contact-card-cta">Connect →</span>
-          </a>
-          <a href="https://github.com/MyselfAddy" target="_blank" rel="noopener" class="contact-card">
-            <div class="contact-card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-            </div>
-            <h4>GitHub</h4>
-            <p>MyselfAddy</p>
-            <span class="contact-card-cta">View Projects →</span>
-          </a>
-          <a href="tel:+919620881655" class="contact-card">
-            <div class="contact-card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            </div>
-            <h4>Phone</h4>
-            <p>+91 96208 81655</p>
-            <span class="contact-card-cta">Call Now →</span>
-          </a>
+      <div class="edu-card">
+        <div class="edu-icon">🏫</div>
+        <div>
+          <div class="edu-deg">10th Standard</div>
+          <div class="edu-school">M.Tres High School</div>
+          <div class="edu-loc">Bengaluru, Karnataka</div>
         </div>
-        <div class="contact-languages reveal-up delay-4">
-          <p><strong>Languages:</strong> English (Conversational) &nbsp;·&nbsp; Hindi (Native) &nbsp;·&nbsp; Odia (Native) &nbsp;·&nbsp; Kannada (Spoken)</p>
+        <div class="edu-score-wrap">
+          <span class="edu-score">88%</span>
+          <span class="edu-score-lbl">Percentage</span>
+          <span class="edu-year">2007 – 2019</span>
         </div>
       </div>
-    </section>
 
-  </main>
+    </div>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <span class="footer-logo">AS<span style="color:var(--accent)">.</span></span>
-        <p>Aditya Senapati R &nbsp;·&nbsp; Bangalore, Karnataka, India</p>
-        <p>Aspiring SOC Analyst · AI/ML Engineer · Open to Opportunities</p>
+<!-- ═══════════════ CERTIFICATIONS ═══════════════ -->
+<section class="section" id="certifications">
+  <div class="wrap">
+    <div class="section-tag reveal">// 06 — certifications</div>
+    <h2 class="section-title reveal">Certifications</h2>
+
+    <div class="cert-grid reveal">
+      <div class="cert-card">
+        <div class="cert-issuer">Coursera · Google</div>
+        <div class="cert-name">Google Cybersecurity Professional Certification (Course Audits)</div>
       </div>
-      <div class="footer-right">
-        <div class="footer-links">
-          <a href="https://www.linkedin.com/in/aditya-senapati-r-62bb87309/" target="_blank">LinkedIn</a>
-          <a href="https://github.com/MyselfAddy" target="_blank">GitHub</a>
-          <a href="Aditya_Senapati_Resume_L1.pdf" target="_blank">Resume</a>
-          <a href="mailto:adityasenapati25@gmail.com">Email</a>
+      <div class="cert-card">
+        <div class="cert-issuer">Cisco Networking Academy</div>
+        <div class="cert-name">Cybersecurity Defence Analyst</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Oracle</div>
+        <div class="cert-name">Oracle Cloud Infrastructure — AI Foundations (2025)</div>
+        <a href="certificates/eCertificate (2).pdf" target="_blank" class="cert-btn">📜 View Certificate</a>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Forage · TATA</div>
+        <div class="cert-name">TATA Cybersecurity Analyst Simulation</div>
+        <a href="certificates/Forage TATA cybersecurity Certificate.pdf" target="_blank" class="cert-btn">📜 View Certificate</a>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">LetsDefend</div>
+        <div class="cert-name">SOC Analyst Learning Path</div>
+        <a href="certificates/SOC Analyst Learning Path — LetsDefend.png" target="_blank" class="cert-btn">📜 View Certificate</a>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Internshala</div>
+        <div class="cert-name">Machine Learning</div>
+        <a href="certificates/Machine Learning — Internshala Training.png" target="_blank" class="cert-btn">📜 View Certificate</a>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Scholverse Educare</div>
+        <div class="cert-name">Machine Learning</div>
+        <a href="certificates/Machine Learning — Scholverse Educare.png" target="_blank" class="cert-btn">📜 View Certificate</a>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Devtown · Google Developer Group</div>
+        <div class="cert-name">Splunk Ignite Bootcamp</div>
+        <a href="certificates/Splunk Ignite — Devtown , google.png" target="_blank" class="cert-btn">📜 View Certificate</a>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Devtown · Microsoft Student Chapter</div>
+        <div class="cert-name">Splunk Ignite</div>
+        <a href="certificates/Splunk Ignite — Devtown, microsoft.png" target="_blank" class="cert-btn">📜 View Certificate</a>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Devtown</div>
+        <div class="cert-name">Splunk Ignite — Bootcamp Completion</div>
+        <a href="certificates/Splunk Ignite — Devtown.png" target="_blank" class="cert-btn">📜 View Certificate</a>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Forage · Datacom</div>
+        <div class="cert-name">Datacom Cybersecurity Operations Simulation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ RESUME ═══════════════ -->
+<section class="section" id="resume">
+  <div class="wrap">
+    <div class="section-tag reveal">// 07 — resume</div>
+    <h2 class="section-title reveal">Resume</h2>
+
+    <div class="resume-card reveal">
+      <div class="resume-icon-wrap">📄</div>
+      <div class="resume-info">
+        <h3>Aditya_Senapati_Resume_L1.pdf</h3>
+        <p>
+          Full resume detailing work experience, projects, skills, certifications, and education.
+          Last updated for SOC Analyst L1 roles.
+        </p>
+        <div class="btn-row" style="margin-bottom:0">
+          <a href="Aditya_Senapati_Resume_L1.pdf" target="_blank" class="btn btn-fill">📄 View Resume</a>
+          <a href="Aditya_Senapati_Resume_L1.pdf" download class="btn btn-ghost">⬇ Download</a>
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© <span id="year"></span> Aditya Senapati R. Built with purpose.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="section-tag reveal">// 08 — contact</div>
+    <h2 class="section-title reveal">Get In Touch</h2>
+
+    <div class="contact-grid reveal">
+      <div class="contact-left">
+        <h3>Let's Work Together</h3>
+        <p>
+          I'm actively seeking <strong style="color:var(--cyan)">SOC Analyst / Security Analyst</strong>
+          internship and entry-level roles. I respond quickly and am available to start immediately.
+        </p>
+
+        <a href="mailto:adityasenapati25@gmail.com" class="citem">
+          <div class="citem-icon">✉</div>
+          <div>
+            <div class="citem-lbl">Email</div>
+            <div class="citem-val">adityasenapati25@gmail.com</div>
+          </div>
+        </a>
+        <a href="tel:+919620881655" class="citem">
+          <div class="citem-icon">📞</div>
+          <div>
+            <div class="citem-lbl">Phone</div>
+            <div class="citem-val">+91 96208 81655</div>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/aditya-senapati-r-62bb87309/" target="_blank" class="citem">
+          <div class="citem-icon">🔗</div>
+          <div>
+            <div class="citem-lbl">LinkedIn</div>
+            <div class="citem-val">aditya-senapati-r-62bb87309</div>
+          </div>
+        </a>
+        <a href="https://github.com/MyselfAddy" target="_blank" class="citem">
+          <div class="citem-icon">🐙</div>
+          <div>
+            <div class="citem-lbl">GitHub</div>
+            <div class="citem-val">MyselfAddy</div>
+          </div>
+        </a>
+        <div class="citem">
+          <div class="citem-icon">📍</div>
+          <div>
+            <div class="citem-lbl">Location</div>
+            <div class="citem-val">Bangalore, Karnataka, India</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hire-box">
+        <div class="hire-emoji">🚀</div>
+        <h3>Ready to Defend Your Infrastructure</h3>
+        <p>
+          Passionate about monitoring threats, triaging alerts, and protecting enterprise environments.
+          Let's build a safer digital world together.
+        </p>
+        <a href="mailto:adityasenapati25@gmail.com" class="btn btn-fill">✉ Email Me Now</a>
+        <a href="Aditya_Senapati_Resume_L1.pdf" download class="btn btn-ghost">⬇ Download Resume</a>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="footer-name">ADITYA SENAPATI R</div>
+  <div class="footer-copy">© <span id="yr"></span> · Built with passion & precision · Bangalore, Karnataka, India</div>
+</footer>
 
-    // Nav scroll behavior
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('nav-scrolled', window.scrollY > 60);
+<script>
+  /* Year */
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* Particles */
+  const pc = document.getElementById('particles');
+  for (let i = 0; i < 28; i++) {
+    const d = document.createElement('div');
+    d.className = 'p-dot';
+    const sz = Math.random() > 0.5 ? 2 : 1.5;
+    d.style.cssText = `
+      left:${Math.random()*100}vw;
+      width:${sz}px; height:${sz}px;
+      background:${Math.random()>0.5?'#38bdf8':'#2dd4bf'};
+      animation-duration:${7+Math.random()*12}s;
+      animation-delay:${Math.random()*15}s;
+      opacity:${0.2+Math.random()*0.4};
+    `;
+    pc.appendChild(d);
+  }
+
+  /* Scroll reveal */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 70);
+        io.unobserve(e.target);
+      }
     });
+  }, { threshold: 0.07 });
 
-    // Mobile nav toggle
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('nav-open');
-      navToggle.classList.toggle('nav-toggle-open');
-    });
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('nav-open');
-        navToggle.classList.remove('nav-toggle-open');
-      });
-    });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    // Scroll reveal
-    const revealEls = document.querySelectorAll('.reveal-up, .reveal-right');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(el => observer.observe(el));
+  /* Nav active state on scroll */
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const links = document.querySelectorAll('.nav-links a');
 
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
+  const sio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => {
+          l.style.color = '';
+          if (l.getAttribute('href') === '#' + e.target.id) {
+            l.style.color = 'var(--cyan)';
+          }
+        });
+      }
     });
+  }, { threshold: 0.4 });
 
-    // Terminal typing animation
-    const termLines = document.querySelectorAll('.pf-terminal-body .t-line');
-    termLines.forEach((line, i) => {
-      line.style.opacity = '0';
-      line.style.animation = `none`;
-      setTimeout(() => {
-        line.style.transition = 'opacity 0.4s';
-        line.style.opacity = '1';
-      }, 600 + i * 500);
+  sections.forEach(s => sio.observe(s));
+
+  /* Mouse glow effect on cards */
+  document.querySelectorAll('.proj-card, .skill-card, .cert-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width * 100).toFixed(1);
+      const y = ((e.clientY - r.top) / r.height * 100).toFixed(1);
+      card.style.background = card.classList.contains('featured')
+        ? `radial-gradient(circle at ${x}% ${y}%, rgba(56,189,248,0.07) 0%, rgba(10,18,34,0.95) 60%)`
+        : `radial-gradient(circle at ${x}% ${y}%, rgba(56,189,248,0.06) 0%, rgba(10,18,34,0.95) 60%)`;
     });
-  </script>
+    card.addEventListener('mouseleave', () => {
+      card.style.background = '';
+    });
+  });
+</script>
 </body>
 </html>
