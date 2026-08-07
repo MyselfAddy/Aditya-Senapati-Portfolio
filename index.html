@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Aditya Senapati R — SOC Analyst · AI/ML Security</title>
-<meta name="description" content="Aditya Senapati R — Cybersecurity Engineer, SOC Analyst, AI/ML Security Specialist. Building next-gen threat detection systems."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300&family=Clash+Display:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<meta name="description" content="Aditya Senapati R — SOC Analyst and AI/ML security engineer, creator of SOCRock, a browser-based SOC investigation training platform.">
+<meta property="og:title" content="Aditya Senapati R — SOC Analyst · Creator of SOCRock">
+<meta property="og:description" content="Portfolio of Aditya Senapati R: SOC investigations, AI threat detection, and SOCRock — a browser-based SOC analyst training platform.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap">
 <style>
 :root{
   --ink:#03070e;
@@ -365,6 +370,164 @@ footer{position:relative;z-index:2;border-top:1px solid var(--border);padding:44
 /* PARTICLE FIELD (canvas enhanced via JS) */
 /* SECTION NUMBERS */
 .sec-num{font-family:var(--mono);font-size:4rem;font-weight:700;color:rgba(0,212,255,0.04);position:absolute;right:0;top:-20px;line-height:1;pointer-events:none;user-select:none}
+/* ========== SOCROCK PLATFORM SECTION ========== */
+.sr-section{position:relative;overflow:hidden}
+.sr-aurora{position:absolute;inset:-20% -10%;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(45% 40% at 18% 20%,rgba(0,212,255,0.10),transparent 70%),
+    radial-gradient(40% 45% at 82% 30%,rgba(124,108,255,0.10),transparent 70%),
+    radial-gradient(50% 40% at 50% 90%,rgba(0,255,179,0.07),transparent 70%);
+  filter:blur(6px);animation:srAurora 22s ease-in-out infinite alternate}
+@keyframes srAurora{0%{transform:translate3d(-2%,-1%,0) scale(1)}100%{transform:translate3d(2%,2%,0) scale(1.06)}}
+.sr-particles{position:absolute;inset:0;z-index:1;pointer-events:none}
+.sr-particles span{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--c1);opacity:.25;animation:srFloat linear infinite}
+@keyframes srFloat{0%{transform:translateY(0);opacity:0}15%{opacity:.35}100%{transform:translateY(-260px);opacity:0}}
+.sr-subtitle{font-family:var(--mono);font-size:clamp(.9rem,1.6vw,1.05rem);color:var(--text3);letter-spacing:.04em;margin:-40px 0 44px}
+
+/* HERO CARD */
+.sr-hero{position:relative;z-index:2;border-radius:calc(var(--rad) + 6px);border:1px solid var(--border2);
+  background:linear-gradient(160deg,rgba(17,27,46,0.86),rgba(10,18,32,0.72));
+  backdrop-filter:blur(18px);padding:clamp(24px,3.4vw,48px);overflow:hidden;
+  transition:transform .5s cubic-bezier(.22,1,.36,1),border-color .4s,box-shadow .5s}
+.sr-hero::before{content:'';position:absolute;inset:-1px;border-radius:inherit;padding:1px;pointer-events:none;
+  background:linear-gradient(120deg,rgba(0,212,255,.45),rgba(0,255,179,.25),rgba(124,108,255,.45),rgba(0,212,255,.45));
+  background-size:300% 300%;animation:srBorder 12s linear infinite;opacity:.45;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+@keyframes srBorder{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+.sr-hero:hover{border-color:var(--border3);box-shadow:0 30px 80px -40px rgba(0,212,255,.45)}
+.sr-hero-glow{position:absolute;width:520px;height:520px;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(0,212,255,.13),transparent 65%);
+  left:var(--mx,50%);top:var(--my,50%);transform:translate(-50%,-50%);opacity:0;transition:opacity .5s}
+.sr-hero:hover .sr-hero-glow{opacity:1}
+.sr-hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,3.5vw,56px);align-items:start}
+.sr-badge{display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--c2);border:1px solid var(--border2);background:rgba(0,255,179,.05);border-radius:999px;padding:8px 16px}
+.sr-title{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:700;letter-spacing:-.05em;line-height:1;margin:20px 0 0;
+  background:linear-gradient(120deg,var(--c1),var(--c2) 45%,var(--c3));background-size:200% auto;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:srShine 8s ease-in-out infinite alternate}
+@keyframes srShine{0%{background-position:0% center}100%{background-position:100% center}}
+.sr-title-rule{width:88px;height:2px;margin:18px 0 22px;background:linear-gradient(90deg,var(--c1),transparent)}
+.sr-desc p{color:var(--text4);font-size:.97rem;line-height:1.8;margin-bottom:14px}
+.sr-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+.sr-btn{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding:14px 26px;
+  border-radius:var(--rad2);border:1px solid var(--border2);cursor:none;transition:all .35s cubic-bezier(.22,1,.36,1);
+  display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.sr-btn-primary{color:var(--ink);background:linear-gradient(120deg,var(--c1),var(--c2));border-color:transparent;font-weight:700}
+.sr-btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px -16px rgba(0,212,255,.75)}
+.sr-btn-ghost{color:var(--text2);background:rgba(255,255,255,.02)}
+.sr-btn-ghost:hover{transform:translateY(-3px);border-color:var(--border3);background:rgba(0,212,255,.07);color:#fff}
+.sr-arrow{transition:transform .3s}
+.sr-btn-primary:hover .sr-arrow{transform:translate(3px,-3px)}
+.sr-live{display:flex;align-items:center;gap:9px;margin-top:20px;font-family:var(--mono);font-size:.72rem;color:var(--text4);letter-spacing:.08em}
+.sr-live-dot{width:7px;height:7px;border-radius:50%;background:var(--c2);box-shadow:0 0 0 0 rgba(0,255,179,.5);animation:srPulse 2.2s infinite}
+@keyframes srPulse{70%{box-shadow:0 0 0 9px rgba(0,255,179,0)}100%{box-shadow:0 0 0 0 rgba(0,255,179,0)}}
+
+/* FLOATING GLASS CARDS */
+.sr-hero-right{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.sr-card{display:flex;gap:14px;padding:18px;border-radius:var(--rad2);border:1px solid var(--border);
+  background:rgba(21,32,53,.55);backdrop-filter:blur(10px);animation:srCardFloat 7s ease-in-out infinite;animation-delay:var(--d,0s);
+  transition:transform .4s cubic-bezier(.22,1,.36,1),border-color .4s,box-shadow .4s,background .4s}
+.sr-card-wide{grid-column:1/-1}
+.sr-card:hover{transform:translateY(-6px);border-color:var(--border3);background:rgba(0,212,255,.06);box-shadow:0 20px 44px -26px rgba(0,212,255,.7)}
+@keyframes srCardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.sr-card-ico{font-size:1.25rem;line-height:1.4}
+.sr-card h4{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:5px;letter-spacing:-.01em}
+.sr-card p{font-size:.78rem;line-height:1.6;color:var(--text4)}
+
+/* METRICS */
+.sr-metrics{position:relative;z-index:2;margin-top:34px;display:grid;grid-template-columns:repeat(6,1fr);
+  border:1px solid var(--border);border-radius:var(--rad);background:rgba(10,18,32,.6);backdrop-filter:blur(12px);overflow:hidden}
+.sr-metric{padding:26px 16px;text-align:center;border-right:1px solid var(--border);transition:background .3s}
+.sr-metric:last-child{border-right:none}
+.sr-metric:hover{background:rgba(0,212,255,.05)}
+.sr-metric-n{display:block;font-size:1.5rem;font-weight:700;letter-spacing:-.03em;line-height:1;
+  background:linear-gradient(135deg,var(--c1),var(--c2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sr-metric-l{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text4);margin-top:8px}
+
+/* SHARED SUBHEAD */
+.sr-h3{position:relative;z-index:2;font-size:1.28rem;font-weight:600;letter-spacing:-.02em;color:var(--text);margin:64px 0 24px}
+.sr-h3::before{content:'';display:inline-block;width:10px;height:10px;margin-right:12px;border-radius:2px;
+  background:linear-gradient(135deg,var(--c1),var(--c3))}
+
+/* HIGHLIGHTS */
+.sr-highlights{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.sr-hl{display:flex;align-items:center;gap:10px;padding:16px 18px;border-radius:var(--rad2);border:1px solid var(--border);
+  background:rgba(17,27,46,.55);backdrop-filter:blur(8px);font-size:.85rem;color:var(--text3);
+  transition:transform .35s,border-color .35s,color .35s,box-shadow .35s}
+.sr-hl:hover{transform:translateY(-4px);border-color:var(--border3);color:#fff;box-shadow:0 18px 36px -26px rgba(0,212,255,.8)}
+.sr-hl-i{color:var(--c1);font-size:.7rem}
+
+/* COMPARISON */
+.sr-compare{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center}
+.sr-col{padding:26px;border-radius:var(--rad);border:1px solid var(--border);background:rgba(17,27,46,.5);backdrop-filter:blur(10px);transition:border-color .4s,box-shadow .4s}
+.sr-col-new{border-color:var(--border2);box-shadow:inset 0 0 0 1px rgba(0,212,255,.05)}
+.sr-col-new:hover{border-color:var(--border3);box-shadow:0 24px 60px -40px rgba(0,255,179,.8)}
+.sr-col-head{margin-bottom:18px}
+.sr-col-tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;padding:7px 14px;border-radius:999px;border:1px solid var(--border2);color:var(--text4)}
+.sr-col-new .sr-col-tag{color:var(--c2);background:rgba(0,255,179,.06)}
+.sr-col ul{list-style:none}
+.sr-col li{position:relative;padding:9px 0 9px 24px;font-size:.9rem;color:var(--text4);border-bottom:1px solid rgba(100,200,255,.05)}
+.sr-col li:last-child{border-bottom:none}
+.sr-col-old li::before{content:'✕';position:absolute;left:0;color:var(--c4);font-size:.75rem}
+.sr-col-new li{color:var(--text2)}
+.sr-col-new li::before{content:'✓';position:absolute;left:0;color:var(--c2);font-size:.8rem}
+.sr-vs{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--c1);opacity:.6}
+
+/* ARCHITECTURE */
+.sr-arch{position:relative;z-index:2;display:flex;flex-direction:column;gap:12px;align-items:center;padding:8px 0}
+.sr-arch-line{position:absolute;top:0;bottom:0;left:50%;width:1px;background:linear-gradient(180deg,transparent,var(--border2),transparent)}
+.sr-node{position:relative;width:min(100%,460px);display:flex;align-items:center;gap:14px;padding:14px 20px;border-radius:var(--rad2);
+  border:1px solid var(--border);background:rgba(21,32,53,.7);backdrop-filter:blur(10px);font-size:.9rem;color:var(--text3);
+  transition:transform .35s,border-color .35s,background .35s,color .35s}
+.sr-node:hover{transform:scale(1.03);border-color:var(--border3);background:rgba(0,212,255,.07);color:#fff}
+.sr-node:not(:last-child)::after{content:'↓';position:absolute;bottom:-19px;left:50%;transform:translateX(-50%);color:var(--c1);opacity:.5;font-size:.8rem;animation:srDown 2.6s ease-in-out infinite}
+@keyframes srDown{0%,100%{transform:translate(-50%,-2px);opacity:.3}50%{transform:translate(-50%,2px);opacity:.75}}
+.sr-node-i{font-family:var(--mono);font-size:.66rem;color:var(--c1);opacity:.8}
+
+/* STACK */
+.sr-stack{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:12px}
+.sr-chip{font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;padding:10px 18px;border-radius:999px;
+  border:1px solid var(--border);background:rgba(17,27,46,.6);color:var(--text3);transition:all .3s}
+.sr-chip:hover{border-color:var(--border3);color:#fff;transform:translateY(-3px);background:rgba(0,212,255,.07)}
+
+/* ROADMAP */
+.sr-roadmap{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.sr-road{padding:26px;border-radius:var(--rad);border:1px solid var(--border);background:rgba(17,27,46,.5);backdrop-filter:blur(10px);transition:border-color .4s,box-shadow .4s}
+.sr-road:hover{border-color:var(--border3);box-shadow:0 24px 60px -42px rgba(0,212,255,.8)}
+.sr-road-head{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text3);margin-bottom:16px}
+.sr-dot-live{width:8px;height:8px;border-radius:50%;background:var(--c2);animation:srPulse 2.2s infinite}
+.sr-dot-next{width:8px;height:8px;border-radius:50%;background:var(--c3)}
+.sr-road ul{list-style:none}
+.sr-road li{padding:8px 0 8px 22px;position:relative;font-size:.88rem;color:var(--text4);border-bottom:1px solid rgba(100,200,255,.05)}
+.sr-road li:last-child{border-bottom:none}
+.sr-road-now li::before{content:'●';position:absolute;left:0;color:var(--c2);font-size:.6rem;top:11px}
+.sr-road-next li::before{content:'○';position:absolute;left:0;color:var(--c3);font-size:.6rem;top:11px}
+
+/* RESPONSIVE */
+@media(max-width:1040px){
+  .sr-hero-grid{grid-template-columns:1fr}
+  .sr-metrics{grid-template-columns:repeat(3,1fr)}
+  .sr-metric:nth-child(3n){border-right:none}
+  .sr-highlights{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  .sr-subtitle{margin:-28px 0 32px}
+  .sr-hero-right{grid-template-columns:1fr}
+  .sr-metrics{grid-template-columns:repeat(2,1fr)}
+  .sr-metric{border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .sr-metric:nth-child(2n){border-right:none}
+  .sr-highlights{grid-template-columns:1fr}
+  .sr-compare{grid-template-columns:1fr}
+  .sr-vs{justify-self:center}
+  .sr-roadmap{grid-template-columns:1fr}
+  .sr-btn{flex:1 1 auto;justify-content:center}
+  .sr-arch-line{left:22px}
+  .sr-node{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  .sr-card,.sr-aurora,.sr-title,.sr-particles span,.sr-node:not(:last-child)::after{animation:none}
+}
+
 </style>
 </head>
 <body>
@@ -467,11 +630,11 @@ footer{position:relative;z-index:2;border-top:1px solid var(--border);padding:44
 <!-- STATS -->
 <div class="stats-wrap">
   <div class="stats-inner">
-    <div class="stat-item reveal"><span class="stat-n">4+</span><span class="stat-l">Projects</span></div>
+    <div class="stat-item reveal"><span class="stat-n">5+</span><span class="stat-l">Projects</span></div>
     <div class="stat-item reveal"><span class="stat-n">10+</span><span class="stat-l">Certifications</span></div>
     <div class="stat-item reveal"><span class="stat-n">99.86%</span><span class="stat-l">IDS F1-Score</span></div>
     <div class="stat-item reveal"><span class="stat-n">2.5M+</span><span class="stat-l">Records Analyzed</span></div>
-    <div class="stat-item reveal"><span class="stat-n">3</span><span class="stat-l">Live Deployments</span></div>
+    <div class="stat-item reveal"><span class="stat-n">4</span><span class="stat-l">Live Deployments</span></div>
   </div>
 </div>
 <!-- ABOUT -->
@@ -497,6 +660,89 @@ footer{position:relative;z-index:2;border-top:1px solid var(--border);padding:44
     </div>
   </div>
 </section>
+
+<!-- ========================= -->
+<!-- MY PLATFORM — SOCRock -->
+<!-- ========================= -->
+<section id="platform" class="section sr-section">
+  <div class="sr-aurora" aria-hidden="true"></div>
+  <div class="sr-particles" id="srParticles" aria-hidden="true"></div>
+  <div class="wrap" style="position:relative">
+    <div class="sec-num">01.5</div>
+    <div class="sec-pre reveal">// 01.5 — my platform</div>
+    <h2 class="sec-title reveal">My Platform</h2>
+    <p class="sr-subtitle reveal">Building the Future of SOC Analyst Training</p>
+
+    <!-- HERO CARD -->
+    <div class="sr-hero reveal" id="srHero">
+      <div class="sr-hero-glow" aria-hidden="true"></div>
+      <div class="sr-hero-grid">
+        <div class="sr-hero-left">
+          <span class="sr-badge">🚀 Browser-Based SOC Investigation Platform</span>
+          <h3 class="sr-title">SOCRock</h3>
+          <div class="sr-title-rule" aria-hidden="true"></div>
+          <div class="sr-desc">
+            <p><span class="hl2">SOCRock</span> is a browser-based cybersecurity training platform designed to help aspiring Security Operations Center (SOC) Analysts develop real-world investigation skills through hands-on practice.</p>
+            <p>Instead of spending hours installing SIEMs, virtual machines, log forwarders, and attack labs, learners immediately begin investigating realistic security alerts inside a fully interactive browser environment.</p>
+            <p>The platform focuses on analytical thinking, evidence collection, incident triage, alert prioritization, continuous monitoring, escalation decisions, and practical SOC workflows that closely resemble real Tier-1 Security Operations Centers.</p>
+            <p>SOCRock transforms cybersecurity learning from passive content consumption into an immersive investigation experience.</p>
+          </div>
+          <div class="sr-actions">
+            <a class="sr-btn sr-btn-primary" href="https://socrock.vercel.app" target="_blank" rel="noopener noreferrer">Explore Platform <span class="sr-arrow">↗</span></a>
+            
+          </div>
+          <div class="sr-live"><span class="sr-live-dot"></span>Live at socrock.vercel.app</div>
+        </div>
+
+        <div class="sr-hero-right" id="srCards">
+          <article class="sr-card" style="--d:0s"><div class="sr-card-ico">🕵️</div><div><h4>Investigation Workspace</h4><p>Practice complete SOC investigations from alert creation to incident resolution.</p></div></article>
+          <article class="sr-card" style="--d:.4s"><div class="sr-card-ico">📡</div><div><h4>Continuous Monitoring</h4><p>Monitor multiple security agents simultaneously under realistic conditions.</p></div></article>
+          <article class="sr-card" style="--d:.8s"><div class="sr-card-ico">🗄️</div><div><h4>Alert Vault</h4><p>A growing collection of realistic investigation scenarios.</p></div></article>
+          <article class="sr-card" style="--d:1.2s"><div class="sr-card-ico">📘</div><div><h4>Knowledge Transfer</h4><p>Interactive learning modules built specifically for SOC beginners.</p></div></article>
+          <article class="sr-card" style="--d:1.6s"><div class="sr-card-ico">🛡️</div><div><h4>Daily Patrol</h4><p>Daily investigation challenges designed to build consistency.</p></div></article>
+          <article class="sr-card" style="--d:2s"><div class="sr-card-ico">🏆</div><div><h4>Leaderboards</h4><p>Gamified learning experience with rankings and progress tracking.</p></div></article>
+          <article class="sr-card sr-card-wide" style="--d:2.4s"><div class="sr-card-ico">🌐</div><div><h4>Browser-Based</h4><p>No virtual machines. No SIEM installation. Start learning instantly.</p></div></article>
+        </div>
+      </div>
+    </div>
+
+    <!-- METRICS STRIP -->
+    <div class="sr-metrics reveal" id="srMetrics">
+      <div class="sr-metric"><span class="sr-metric-n" data-count="100" data-suffix="%">0%</span><span class="sr-metric-l">Browser-Based</span></div>
+      <div class="sr-metric"><span class="sr-metric-n" data-text="Realistic">—</span><span class="sr-metric-l">Realistic Investigations</span></div>
+      <div class="sr-metric"><span class="sr-metric-n" data-text="Interactive">—</span><span class="sr-metric-l">Interactive Learning</span></div>
+      <div class="sr-metric"><span class="sr-metric-n" data-text="Gamified">—</span><span class="sr-metric-l">Gamified Practice</span></div>
+      <div class="sr-metric"><span class="sr-metric-n" data-count="24" data-suffix="/7">0</span><span class="sr-metric-l">Continuous Monitoring</span></div>
+      <div class="sr-metric"><span class="sr-metric-n" data-text="Tier-1">—</span><span class="sr-metric-l">Real SOC Workflow</span></div>
+    </div>
+
+    <!-- TECH STACK -->
+    <h3 class="sr-h3 reveal">Technology Stack</h3>
+    <div class="sr-stack reveal">
+      <span class="sr-chip">Artificial Intelligence</span>
+      <span class="sr-chip">Cybersecurity</span>
+      <span class="sr-chip">Google AI Studio</span>
+      <span class="sr-chip">Claude</span>
+      <span class="sr-chip">Lovable</span>
+      <span class="sr-chip">ChatGPT</span>
+      <span class="sr-chip">React</span>
+      <span class="sr-chip">TypeScript</span>
+      <span class="sr-chip">Node.js</span>
+      <span class="sr-chip">Express</span>
+      <span class="sr-chip">Prisma</span>
+      <span class="sr-chip">PostgreSQL</span>
+      <span class="sr-chip">Clerk Authentication</span>
+      <span class="sr-chip">TailwindCSS</span>
+      <span class="sr-chip">Responsive Design</span>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
 <!-- SKILLS -->
 <section class="section" id="skills">
   <div class="wrap" style="position:relative">
@@ -944,6 +1190,86 @@ const termIO=new IntersectionObserver(entries=>{
   });
 },{threshold:0.5});
 document.querySelectorAll('.terminal').forEach(t=>termIO.observe(t));
+/* ========== SOCROCK PLATFORM SECTION JS ========== */
+(function(){
+  var section=document.getElementById('platform');
+  if(!section)return;
+
+  /* floating particles */
+  var field=document.getElementById('srParticles');
+  if(field){
+    for(var i=0;i<26;i++){
+      var s=document.createElement('span');
+      s.style.left=(Math.random()*100)+'%';
+      s.style.top=(60+Math.random()*45)+'%';
+      s.style.animationDuration=(10+Math.random()*14)+'s';
+      s.style.animationDelay=(-Math.random()*18)+'s';
+      s.style.background=['#00d4ff','#00ffb3','#7c6cff'][i%3];
+      field.appendChild(s);
+    }
+  }
+
+  /* mouse-reactive glow + subtle parallax on hero card */
+  var hero=document.getElementById('srHero');
+  if(hero){
+    hero.addEventListener('mousemove',function(e){
+      var r=hero.getBoundingClientRect();
+      var x=e.clientX-r.left, y=e.clientY-r.top;
+      hero.style.setProperty('--mx',x+'px');
+      hero.style.setProperty('--my',y+'px');
+      var rx=((y/r.height)-0.5)*-2, ry=((x/r.width)-0.5)*2;
+      hero.style.transform='perspective(1400px) rotateX('+rx.toFixed(2)+'deg) rotateY('+ry.toFixed(2)+'deg)';
+    });
+    hero.addEventListener('mouseleave',function(){hero.style.transform='';});
+  }
+
+  /* View Architecture -> smooth scroll */
+  var archBtn=document.getElementById('srArchBtn');
+  if(archBtn){
+    archBtn.addEventListener('click',function(){
+      var t=document.getElementById('sr-architecture');
+      if(t)t.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  }
+
+  /* metric counters / text reveal */
+  var metrics=document.getElementById('srMetrics');
+  if(metrics&&'IntersectionObserver' in window){
+    var mo=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting)return;
+        mo.disconnect();
+        metrics.querySelectorAll('.sr-metric-n').forEach(function(el){
+          var txt=el.getAttribute('data-text');
+          if(txt){
+            var chars='ABCDEFGHIJKLMNOPQRSTUVWXYZ-1';var f=0;
+            var iv=setInterval(function(){
+              f++;
+              el.textContent=txt.split('').map(function(c,idx){
+                return idx<f/2?c:chars[Math.floor(Math.random()*chars.length)];
+              }).join('');
+              if(f/2>=txt.length){el.textContent=txt;clearInterval(iv);}
+            },45);
+            return;
+          }
+          var target=parseInt(el.getAttribute('data-count')||'0',10);
+          var suffix=el.getAttribute('data-suffix')||'';
+          var start=null,dur=1400;
+          function step(ts){
+            if(!start)start=ts;
+            var p=Math.min((ts-start)/dur,1);
+            var eased=1-Math.pow(1-p,3);
+            el.textContent=Math.round(target*eased)+suffix;
+            if(p<1)requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        });
+      });
+    },{threshold:0.35});
+    mo.observe(metrics);
+  }
+})();
+
 </script>
 </body>
 </html>
